@@ -11,10 +11,13 @@
     <title>Product List</title>
 </head>
 <body>
-    <div class="container" style="margin-top-right">
+    <div class="container" >
         <div class="row">
             <div class="col-md-12">
                 <h2>Product List</h2>
+                <div >
+                    <a href="#" class="btn btn-dark" >Add</a>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -24,6 +27,7 @@
                             <th>Detail</th>
                             <th>Image</th>
                             <th>Producer</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +39,7 @@
                             <td>{{$row->productDetail}}</td>
                             <td>{{$row->productImage}}</td>
                             <td>{{$row->producerID}}</td>
+                            <td>Edit | Delete</td>
                         </tr>
                         @endforeach
                     </tbody>
