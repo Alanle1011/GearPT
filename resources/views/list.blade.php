@@ -26,7 +26,9 @@
                             <th>Price</th>
                             <th>Detail</th>
                             <th>Image</th>
+                            <th>Type</th>
                             <th>Producer</th>
+                            
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -39,6 +41,7 @@
                             <td>{{$row->productDetail}}</td>
                             <td>{{$row->productImage}}</td>
                             <td>{{$row->producerID}}</td>
+                            <td>{{$row->productTypeID}}</td>
                             <td>Edit | Delete</td>
                         </tr>
                         @endforeach
