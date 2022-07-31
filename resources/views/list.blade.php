@@ -16,7 +16,7 @@
             <div class="col-md-12">
                 <h2>Product List</h2>
                 <div >
-                    <a href="#" class="btn btn-dark" >Add</a>
+                    <a href="{{url('add-product')}}" class="btn btn-dark" style="float: right; margin-right: 20px;"  >Add</a>
                 </div>
                 <table class="table">
                     <thead>

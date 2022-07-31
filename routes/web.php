@@ -19,9 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get(
-    'list',[ProductController::class,'index']
-);
-Route::get(
-    'home',[HomeController::class,'index']
-);
+Route::get('list',[ProductController::class,'index']);
+Route::get('add-product',[ProductController::class,'addProduct']);
+Route::post('save-product',[ProductController::class,'saveProduct']);
+
+Route::get('home',[HomeController::class,'index']);
