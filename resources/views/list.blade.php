@@ -24,7 +24,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Price</th>
-                            <th>Detail</th>
+                            <th>Description</th>
                             <th>Image</th>
                             <th>Type</th>
                             <th>Producer</th>
@@ -38,7 +38,7 @@
                             <td>{{$row->productID}}</td>
                             <td>{{$row->productName}}</td>
                             <td>{{$row->productPrice}}</td>
-                            <td>{{$row->productDetail}}</td>
+                            <td>{{$row->productDescription}}</td>
                             <td>{{$row->productImage}}</td>
                             <td>{{$row->producerID}}</td>
                             <td>{{$row->productTypeID}}</td>
