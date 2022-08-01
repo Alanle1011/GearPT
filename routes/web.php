@@ -3,6 +3,8 @@
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductTypeController;
+use App\Models\ProductType;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +25,4 @@ Route::get('list',[ProductController::class,'index']);
 Route::get('add-product',[ProductController::class,'addProduct']);
 Route::post('save-product',[ProductController::class,'saveProduct']);
 
-Route::get('home',[HomeController::class,'index']);
+Route::get('home',[HomeController::class,'index'],);

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
+use function GuzzleHttp\Promise\all;
+
 class ProductController extends Controller
 {
     public function index(){
@@ -18,6 +20,7 @@ class ProductController extends Controller
     }
     public function saveProduct(Request $request)
     {
+      
         $productName = $request->productName;
         $productPrice = $request->productPrice;
         $productDescription = $request->productDescription;
@@ -31,6 +34,7 @@ class ProductController extends Controller
         $prd->producerID = $productProducer;
         $prd->productTypeID = $productType;
         $prd->save();
+        
 
         return redirect()->back()->with('success','Product Added Successfully');
     }

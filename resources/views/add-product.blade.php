@@ -38,13 +38,30 @@
                 <input type="text" class="form-control" id="productDescription" placeholder="Enter product Description" name="productDescription" >
             </div>
             <div class="mb-3" >
+                <label for="productDetail" >Product Image</label>
+                <input type="text" class="form-control" id="productImage" placeholder="Enter product Image" name="productImage" >
+            </div>
+
+            <div class="mb-3" >
                 <label for="productType" >Product Type</label>
                 <input type="text" class="form-control" id="productType" placeholder="Enter product Type" name="productType" >
             </div>
             <div class="mb-3" >
                 <label for="productDetail" >Product Producer</label>
-                <input type="text" class="form-control" id="productProducer" placeholder="Enter product Producer" name="productProducer" >
+                <input type="te" class="form-control" id="productProducer" placeholder="Enter product Producer" name="productProducer" >
             </div>
+
+            {{-- <label for="productCategory">Product category</label>
+                <select class="form-control" name="productCategory" id="productCategory"  require>
+                <option value="" disabled selected>Select a categoty</option>
+                @foreach ( $ProductTypedata as $row )
+                    <option>
+                        {{$row->$productTypeName}}
+                    </option>
+                        
+                @endforeach
+                </select>
+            </div> --}}
             
             {{-- <div class="panel-body">
                 <form action="{{ route('image.store') }}" method="POST" enctype="multipart/form-data">
