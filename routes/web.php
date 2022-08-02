@@ -17,9 +17,9 @@ use App\Models\ProductType;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('list-product',[ProductController::class,'index']);
 Route::get('add-product',[ProductController::class,'addProduct']);
@@ -29,4 +29,4 @@ Route::post('update-product',[ProductController::class,'updateProduct']);
 Route::get('delete-product/{id}',[ProductController::class,'deleteProduct']);
 
 
-Route::get('home',[HomeController::class,'index'],);
+Route::get('/',[HomeController::class,'index'],);

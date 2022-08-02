@@ -60,16 +60,31 @@
 
             <div class="mb-3" >
                 <label for="productType" >Product Type</label>
-                <input type="text" class="form-control" id="productType" placeholder="Enter product Type" name="productType" >
+                <select class="form-control" name="productType" id="productType"  require>
+                    <option value="" disabled selected>Select a Type</option>
+                    @foreach($productTypedata as $row)
+                    <option value="{{$row->productTypeID}}"> 
+                        {{$row->productTypeID}} - {{$row->productTypeName}} 
+                    </option>
+                    @endforeach
+                </select>
                 @error('productType')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
                  @enderror
             </div>
+            
             <div class="mb-3" >
                 <label for="productDetail" >Product Producer</label>
-                <input type="te" class="form-control" id="productProducer" placeholder="Enter product Producer" name="productProducer" >
+                <select class="form-control" name="productProducer" id="productProducer"  require>
+                    <option value="" disabled selected>Select a Type</option>
+                    @foreach($producerdata as $row)
+                    <option value="{{$row->producerID}}"> 
+                        {{$row->producerID}} - {{$row->producerName}}
+                    </option>
+                    @endforeach
+                </select>
                 @error('productProducer')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}

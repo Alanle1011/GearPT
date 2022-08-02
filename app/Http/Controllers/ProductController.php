@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producer;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\ProductType;
 
 use function GuzzleHttp\Promise\all;
 
@@ -16,7 +18,9 @@ class ProductController extends Controller
         return view('list-product', compact('data'));
     }
     public function addProduct(){
-        return view('add-product');
+        $productTypedata = ProductType::get();
+        $producerdata =Producer::get();
+        return view('add-product', compact('productTypedata','producerdata'));
     }
     public function saveProduct(Request $request)
     {
@@ -24,7 +28,7 @@ class ProductController extends Controller
         $request->validate([
             'productName' => 'required',
             'productPrice' => 'required',
-            'productImage' => 'required|file',
+            'productImage' => 'required',
             'productType' => 'required',
             'productProducer' => 'required'
         ]);
@@ -55,6 +59,7 @@ class ProductController extends Controller
     }
     public function updateProduct(Request $request){
         $id = $request->productID;
+
         Product::where('productID','=',$id)->update([
             'productName' => $request->productName,
             'productPrice' => $request->productPrice,
@@ -62,7 +67,7 @@ class ProductController extends Controller
             'productImage' => $request->productImage,
             'productTypeID' => $request->productType,
             'producerID' => $request->productProducer
-            
+
         ]);
         return redirect()->back()->with('success','Product Edit Successfully');
     }

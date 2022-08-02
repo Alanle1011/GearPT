@@ -10,6 +10,6 @@ class HomeController extends Controller
     public function index(){
         $data = Product::get();
 
-        return view('home', compact('data'));
+        return view('GearPT/home', compact('data'));
     }
 }
