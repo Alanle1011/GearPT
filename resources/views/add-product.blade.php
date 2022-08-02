@@ -24,67 +24,60 @@
             @csrf
 
             <div class="mb-3">
-            <label for="productName" >Product Name</label>
-            <input type="text" class="form-control" id="productName" placeholder="Enter product name" name="productName">
-            @error('productName')
-            <div class="alert alert-danger" role="alert">
-                {{$message}}
-            </div>
-            @enderror
+                <label for="productName" >Product Name</label>
+                <input type="text" class="form-control" id="productName" placeholder="Enter product name" name="productName">
+                @error('productName')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
         
             <div class="mb-3">
-            <label for="productPrice" >Product Price</label>
-            <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" name="productPrice"  require>
+                <label for="productPrice" >Product Price</label>
+                <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" name="productPrice"  require>
+                @error('productPrice')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
             </div>
 
             <div class="mb-3" >
                 <label for="productDetail" >Product Description</label>
                 <input type="text" class="form-control" id="productDescription" placeholder="Enter product Description" name="productDescription" >
+                
             </div>
             <div class="mb-3" >
                 <label for="productDetail" >Product Image</label>
                 <input type="file" class="form-control" id="productImage" placeholder="Enter product Image" name="productImage" >
+                @error('productImage')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
             </div>
 
             <div class="mb-3" >
                 <label for="productType" >Product Type</label>
                 <input type="text" class="form-control" id="productType" placeholder="Enter product Type" name="productType" >
+                @error('productType')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
             </div>
             <div class="mb-3" >
                 <label for="productDetail" >Product Producer</label>
                 <input type="te" class="form-control" id="productProducer" placeholder="Enter product Producer" name="productProducer" >
+                @error('productProducer')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
             </div>
 
-            {{-- <label for="productCategory">Product category</label>
-                <select class="form-control" name="productCategory" id="productCategory"  require>
-                <option value="" disabled selected>Select a categoty</option>
-                @foreach ( $ProductTypedata as $row )
-                    <option>
-                        {{$row->$productTypeName}}
-                    </option>
-                        
-                @endforeach
-                </select>
-            </div> --}}
-            
-            {{-- <div class="panel-body">
-                <form action="{{ route('image.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-3">
-                        <label class="form-label" for="inputImage">Image:</label>
-                        <input 
-                            type="file" 
-                            name="image" 
-                            id="inputImage"
-                            class="form-control @error('image') is-invalid @enderror">
         
-                        @error('image')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </form> 
-            </div> --}}
 
         
 

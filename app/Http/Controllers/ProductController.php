@@ -13,7 +13,7 @@ class ProductController extends Controller
         $data = Product::get();
         
 
-        return view('list', compact('data'));
+        return view('list-product', compact('data'));
     }
     public function addProduct(){
         return view('add-product');
@@ -24,6 +24,7 @@ class ProductController extends Controller
         $request->validate([
             'productName' => 'required',
             'productPrice' => 'required',
+            'productImage' => 'required|file',
             'productType' => 'required',
             'productProducer' => 'required'
         ]);
