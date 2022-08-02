@@ -20,22 +20,53 @@ class ProductController extends Controller
     }
     public function saveProduct(Request $request)
     {
+
+        $request->validate([
+            'productName' => 'required',
+            'productPrice' => 'required',
+            'productType' => 'required',
+            'productProducer' => 'required'
+        ]);
       
         $productName = $request->productName;
         $productPrice = $request->productPrice;
         $productDescription = $request->productDescription;
-        $productProducer = $request->productProducer;
+        $productImage= $request->productImage;
         $productType = $request->productType;
+        $productProducer = $request->productProducer;
+        
 
         $prd = new Product();
         $prd->productName = $productName;
         $prd->productPrice = $productPrice;
         $prd->productDescription = $productDescription;
-        $prd->producerID = $productProducer;
+        $prd->productImage = $productImage;
         $prd->productTypeID = $productType;
+        $prd->producerID = $productProducer;
         $prd->save();
         
 
         return redirect()->back()->with('success','Product Added Successfully');
+    }
+    public function editProduct($id){
+        $data = Product::where('ProductID','=',$id)->first();
+        return view('edit-product',compact('data'));
+    }
+    public function updateProduct(Request $request){
+        $id = $request->productID;
+        Product::where('productID','=',$id)->update([
+            'productName' => $request->productName,
+            'productPrice' => $request->productPrice,
+            'productDescription' => $request->productDescription,
+            'productImage' => $request->productImage,
+            'productTypeID' => $request->productType,
+            'producerID' => $request->productProducer
+            
+        ]);
+        return redirect()->back()->with('success','Product Edit Successfully');
+    }
+    public function deleteProduct($id){
+        Product::where('productID','=',$id)->delete();
+        return redirect()->back()->with('success','Product Delete Successfully');
     }
 }

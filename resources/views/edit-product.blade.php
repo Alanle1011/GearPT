@@ -20,12 +20,16 @@
             {{Session::get('success')}}
         </div>
         @endif
-        <form action="{{url('save-product')}}" method="post" style="margin: 50px">
+        <form action="{{url('update-product')}}" method="post" style="margin: 50px">
             @csrf
+            <div class="mb-3">
+                <label for="productPrice" >Product ID</label>
+                <input type="text" class="form-control" id="productID" name="productID" value="{{$data->productID}}" readonly >
+            </div>
 
             <div class="mb-3">
             <label for="productName" >Product Name</label>
-            <input type="text" class="form-control" id="productName" placeholder="Enter product name" name="productName">
+            <input type="text" class="form-control" id="productName" value="{{$data->productName}}" name="productName">
             @error('productName')
             <div class="alert alert-danger" role="alert">
                 {{$message}}
@@ -35,12 +39,12 @@
         
             <div class="mb-3">
             <label for="productPrice" >Product Price</label>
-            <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" name="productPrice"  require>
+            <input type="number" class="form-control" id="productPrice" value="{{$data->productPrice}}" name="productPrice"  require>
             </div>
 
             <div class="mb-3" >
                 <label for="productDetail" >Product Description</label>
-                <input type="text" class="form-control" id="productDescription" placeholder="Enter product Description" name="productDescription" >
+                <input type="text" class="form-control" id="productDescription" value="{{$data->productDescription}}" name="productDescription" >
             </div>
             <div class="mb-3" >
                 <label for="productDetail" >Product Image</label>
@@ -49,46 +53,17 @@
 
             <div class="mb-3" >
                 <label for="productType" >Product Type</label>
-                <input type="text" class="form-control" id="productType" placeholder="Enter product Type" name="productType" >
+                <input type="text" class="form-control" id="productType" value="{{$data->productTypeID}}" name="productType" >
             </div>
             <div class="mb-3" >
                 <label for="productDetail" >Product Producer</label>
-                <input type="te" class="form-control" id="productProducer" placeholder="Enter product Producer" name="productProducer" >
+                <input type="text" class="form-control" id="productProducer" value="{{$data->producerID}}" name="productProducer" >
             </div>
 
-            {{-- <label for="productCategory">Product category</label>
-                <select class="form-control" name="productCategory" id="productCategory"  require>
-                <option value="" disabled selected>Select a categoty</option>
-                @foreach ( $ProductTypedata as $row )
-                    <option>
-                        {{$row->$productTypeName}}
-                    </option>
-                        
-                @endforeach
-                </select>
-            </div> --}}
-            
-            {{-- <div class="panel-body">
-                <form action="{{ route('image.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-3">
-                        <label class="form-label" for="inputImage">Image:</label>
-                        <input 
-                            type="file" 
-                            name="image" 
-                            id="inputImage"
-                            class="form-control @error('image') is-invalid @enderror">
-        
-                        @error('image')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </form> 
-            </div> --}}
-
+    
         
 
-            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to ADD this product')">Add</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to EDIT this product')">Edit</button>
             <a href="{{url('list-product')}}" class="btn btn-danger">Back</a>
         </form>
            

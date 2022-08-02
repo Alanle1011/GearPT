@@ -14,6 +14,11 @@
     <div class="container" >
         <div class="row">
             <div class="col-md-12">
+                @if(Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{Session::get('success')}}
+                </div>
+            @endif
                 <h2>Product List</h2>
                 <div >
                     <a href="{{url('add-product')}}" class="btn btn-dark" style="float: right; margin-right: 20px;"  >Add</a>
@@ -42,7 +47,10 @@
                             <td>{{$row->productImage}}</td>
                             <td>{{$row->producerID}}</td>
                             <td>{{$row->productTypeID}}</td>
-                            <td>Edit | Delete</td>
+                            <td>
+                                <a href="{{url('edit-product/'.$row->productID)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{url('delete-product/'.$row->productID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete this product')">Delete</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

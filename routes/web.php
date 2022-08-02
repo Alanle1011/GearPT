@@ -21,8 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('list',[ProductController::class,'index']);
+Route::get('list-product',[ProductController::class,'index']);
 Route::get('add-product',[ProductController::class,'addProduct']);
 Route::post('save-product',[ProductController::class,'saveProduct']);
+Route::get('edit-product/{id}',[ProductController::class,'editProduct']);
+Route::post('update-product',[ProductController::class,'updateProduct']);
+Route::get('delete-product/{id}',[ProductController::class,'deleteProduct']);
+
 
 Route::get('home',[HomeController::class,'index'],);
