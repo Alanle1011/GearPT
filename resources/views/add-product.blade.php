@@ -44,12 +44,12 @@
             </div>
 
             <div class="mb-3" >
-                <label for="productDetail" >Product Description</label>
+                <label for="productDescription" >Product Description</label>
                 <input type="text" class="form-control" id="productDescription" placeholder="Enter product Description" name="productDescription" >
                 
             </div>
             <div class="mb-3" >
-                <label for="productDetail" >Product Image</label>
+                <label for="productImage" >Product Image</label>
                 <input type="file" class="form-control" id="productImage" placeholder="Enter product Image" name="productImage" >
                 @error('productImage')
                     <div class="alert alert-danger" role="alert">

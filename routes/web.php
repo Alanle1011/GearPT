@@ -34,6 +34,9 @@ Route::get('delete-product/{id}',[ProductController::class,'deleteProduct']);
 Route::get('/',[HomeController::class,'index'],);
 
 Route::get('register',[ClientController::class,'register']);
+Route::post('register-process',[ClientController::class,'registerProcess']);
 Route::get('login',[ClientController::class,'login']);
+Route::post('login-process',[ClientController::class,'loginProcess']);
+Route::get('logout',[ClientController::class,'logout']);
 
 
