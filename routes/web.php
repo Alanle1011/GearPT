@@ -4,6 +4,9 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\ProducerController;
 use App\Http\Controllers\ProductTypeController;
 use App\Models\ProductType;
 
@@ -23,6 +26,9 @@ use App\Models\ProductType;
 // });
 
 Route::get('list-product',[ProductController::class,'index']);
+Route::get('list-admin',[AdminController::class,'index']);
+Route::get('list-feedback',[FeedbackController::class,'index']);
+Route::get('list-producer',[ProducerController::class,'index']);
 
 Route::get('add-product',[ProductController::class,'addProduct']);
 Route::post('save-product',[ProductController::class,'saveProduct']);
