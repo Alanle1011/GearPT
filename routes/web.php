@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -31,3 +32,8 @@ Route::get('delete-product/{id}',[ProductController::class,'deleteProduct']);
 
 
 Route::get('/',[HomeController::class,'index'],);
+
+Route::get('register',[ClientController::class,'register']);
+Route::get('login',[ClientController::class,'login']);
+
+
