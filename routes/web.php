@@ -22,6 +22,7 @@ use App\Models\ProductType;
 // });
 
 Route::get('list-product',[ProductController::class,'index']);
+
 Route::get('add-product',[ProductController::class,'addProduct']);
 Route::post('save-product',[ProductController::class,'saveProduct']);
 Route::get('edit-product/{id}',[ProductController::class,'editProduct']);
