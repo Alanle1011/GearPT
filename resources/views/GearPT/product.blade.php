@@ -27,8 +27,6 @@
  		<!-- Custom stlylesheet -->
  		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
- 		
-
  		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
  		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
  		<!--[if lt IE 9]>
@@ -48,10 +46,20 @@
 						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 					</ul>
+					@if (Session::has('loginID'))
+						
 					<ul class="header-links pull-right">
-						<li><a href="{{url('login')}}"><i class="fa fa-user-o"></i> Login</a></li>
-						<li><a href="{{url('register')}}"><i class="fa fa-user-o"></i> Register</a></li>
+						<li><a href="#"><i class="fa fa-user-o"></i> Hello: {{Session::get('loginID')}}</a></li>
+						<li><a href="{{url('logout')}}"><i class="fa fa-user-o"></i> Logout</a></li>
 					</ul>
+						
+					@else
+						<ul class="header-links pull-right">
+							<li><a href="{{url('login')}}"><i class="fa fa-user-o"></i> Login</a></li>
+							<li><a href="{{url('register')}}"><i class="fa fa-user-o"></i> Register</a></li>
+						</ul>
+					
+					@endif
 				</div>
 			</div>
 			<!-- /TOP HEADER -->
@@ -65,7 +73,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="{{url('/')}}" class="logo">
+								<a href="#" class="logo">
 									<img src="./img/logo.png" alt="">
 								</a>
 							</div>
@@ -172,7 +180,7 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="{{url('/')}}">Home</a></li>
+						<li class="active"><a href="#">Home</a></li>
 						<li><a href="#">Hot Deals</a></li>
 						<li><a href="#">Categories</a></li>
 						<li><a href="#">Laptops</a></li>
@@ -197,7 +205,7 @@
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">Regular Page</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="{{url('/')}}">Home</a></li>
+							<li><a href="#">Home</a></li>
 							<li class="active">Blank</li>
 						</ul>
 					</div>
@@ -207,92 +215,47 @@
 			<!-- /container -->
 		</div>
 		<!-- /BREADCRUMB -->
-		
+
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-					<div style="padding: 0px 300px">
-						<div class="container-login100">
-							<div class="wrap-login100">
-								@if(Session::has('success'))
-									<div class="alert alert-success" role="alert">
-										{{Session::get('success')}}
-									</div>
-								@endif
-								@if (Session::has('fail'))
-									<div class="alert alert-danger" role="alert">
-										{{Session::get('fail')}}
-									</div>	
-								@endif
-														
-								<form action="{{url('register-process')}}" method="post">
-									@csrf
-									<div style="align-content: center;">
-										<h2 style="text-align: center">Register</h2>
-									</div>
-	
-									<div style="padding-top: 25px ">
-										<label for="username">Username</label>
-										<input class="input" type="text" name="username">
-										<span class="focus-input100" data-placeholder="Username"></span>
-										@error('username')
-										<div class="alert alert-danger" role="alert">
-											{{$message}}
-										</div>
-										@enderror
-									</div>
-									<div style="padding-top: 25px ">
-										<label for="password">Password</label>
-										<input class="input" type="password" name="password">
-										<span class="focus-input100" data-placeholder="Password"></span>
-										@error('password')
-										<div class="alert alert-danger" role="alert">
-											{{$message}}
-										</div>
-									@enderror
-									</div>
-									<div style="padding-top: 25px ">
-										<label for="name">Name</label>
-										<input class="input" type="text" name="name">
-										<span class="focus-input100" data-placeholder="Name"></span>
-										@error('name')
-										<div class="alert alert-danger" role="alert">
-											{{$message}}
-										</div>
-									@enderror
-									</div>
-									<div style="padding-top: 25px ">
-										<label for="phone">Phone</label>
-										<input class="input" type="text" name="phone">
-										<span class="focus-input100" data-placeholder="Phone"></span>
-									</div>
-									<div style="padding-top: 25px ">
-										<label for="address">Address</label>
-										<input class="input" type="text" name="address">
-										<span class="focus-input100" data-placeholder="address"></span>
-									</div>
-									<div style="padding-top: 25px" >
-										<label for="image" >Image</label>
-										<input type="file" class="form-control" id="image" placeholder="Enter Image" name="image" >
-										
-									</div>
-									
-									<div style="margin-top: 20px;" >
-										<button class="primary-btn cta-btn" type="submit">
-											Register
-										</button>
-										<a href="{{url('/')}}" class="primary-btn cta-btn">Cancel</a>
-									</div>
-									
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
+                    @foreach ($data as $row )
+                        
+                    @endforeach
+                    <!-- product -->
+                    <div class="col-md-3">
+                        <div class="product">
+                            <div class="product-img">
+                                <img src="./img/product06.png" alt="">
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">{{url('')}}</p>
+                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product-btns">
+                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                </div>
+                            </div>
+                            <div class="add-to-cart">
+                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /product -->
+                </div>
+                <!-- /row -->
 			</div>
 			<!-- /container -->
 		</div>

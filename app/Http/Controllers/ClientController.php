@@ -51,7 +51,7 @@ class ClientController extends Controller
         $client = Client::where('clientUsername','=',$request->username)->first();
         if($client){
             if(Hash::check($request->password,  $client->clientPassword)){
-                $request->session()->put('loginID',$client->clientID);
+                $request->session()->put('loginID',$client->clientName);
                 return redirect('/');  
             }else{
                 return back()->with('fail','You have input wrong Password. Please try again !!!!');

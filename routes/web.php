@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductTypeController;
@@ -32,6 +33,8 @@ Route::get('delete-product/{id}',[ProductController::class,'deleteProduct']);
 
 
 Route::get('/',[HomeController::class,'index'],);
+Route::get('product',[HomeProductController::class,'index'],);
+
 
 Route::get('register',[ClientController::class,'register']);
 Route::post('register-process',[ClientController::class,'registerProcess']);
