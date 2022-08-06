@@ -54,7 +54,7 @@ class ProductController extends Controller
         return redirect()->back()->with('success','Product Added Successfully');
     }
     public function editProduct($id){
-        $data = Product::where('ProductID','=',$id)->first();
+        $data = Product::where('productID','=',$id)->first();
         return view('edit-product',compact('data'));
     }
     public function updateProduct(Request $request){
@@ -69,10 +69,10 @@ class ProductController extends Controller
             'producerID' => $request->productProducer
 
         ]);
-        return redirect()->back()->with('success','Product Edit Successfully');
+        return redirect()->back()->with('success','Product Edited Successfully');
     }
     public function deleteProduct($id){
         Product::where('productID','=',$id)->delete();
-        return redirect()->back()->with('success','Product Delete Successfully');
+        return redirect()->back()->with('success','Product Deleted Successfully');
     }
 }
