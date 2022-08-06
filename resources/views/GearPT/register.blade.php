@@ -65,7 +65,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
+								<a href="{{url('/')}}" class="logo">
 									<img src="./img/logo.png" alt="">
 								</a>
 							</div>
@@ -172,7 +172,7 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="{{url('/')}}">Home</a></li>
 						<li><a href="#">Hot Deals</a></li>
 						<li><a href="#">Categories</a></li>
 						<li><a href="#">Laptops</a></li>
@@ -197,7 +197,7 @@
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">Regular Page</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
+							<li><a href="{{url('/')}}">Home</a></li>
 							<li class="active">Blank</li>
 						</ul>
 					</div>
@@ -207,7 +207,7 @@
 			<!-- /container -->
 		</div>
 		<!-- /BREADCRUMB -->
-
+		
 		<!-- SECTION -->
 		<div class="section">
 			<!-- container -->
@@ -217,28 +217,76 @@
 					<div style="padding: 0px 300px">
 						<div class="container-login100">
 							<div class="wrap-login100">
-								<form class="login100-form validate-form">
-									
+								@if(Session::has('success'))
+									<div class="alert alert-success" role="alert">
+										{{Session::get('success')}}
+									</div>
+								@endif
+								@if (Session::has('fail'))
+									<div class="alert alert-danger" role="alert">
+										{{Session::get('fail')}}
+									</div>	
+								@endif
+														
+								<form action="{{url('register-process')}}" method="post">
+									@csrf
 									<div style="align-content: center;">
 										<h2 style="text-align: center">Register</h2>
 									</div>
 	
 									<div style="padding-top: 25px ">
 										<label for="username">Username</label>
-										<input class="input" type="text" name="Username">
-										<span class="focus-input100" data-placeholder="Enter Username"></span>
+										<input class="input" type="text" name="username">
+										<span class="focus-input100" data-placeholder="Username"></span>
+										@error('username')
+										<div class="alert alert-danger" role="alert">
+											{{$message}}
+										</div>
+										@enderror
 									</div>
 									<div style="padding-top: 25px ">
 										<label for="password">Password</label>
-										<input class="input" type="password" name="pass">
+										<input class="input" type="password" name="password">
 										<span class="focus-input100" data-placeholder="Password"></span>
+										@error('password')
+										<div class="alert alert-danger" role="alert">
+											{{$message}}
+										</div>
+									@enderror
+									</div>
+									<div style="padding-top: 25px ">
+										<label for="name">Name</label>
+										<input class="input" type="text" name="name">
+										<span class="focus-input100" data-placeholder="Name"></span>
+										@error('name')
+										<div class="alert alert-danger" role="alert">
+											{{$message}}
+										</div>
+									@enderror
+									</div>
+									<div style="padding-top: 25px ">
+										<label for="phone">Phone</label>
+										<input class="input" type="text" name="phone">
+										<span class="focus-input100" data-placeholder="Phone"></span>
+									</div>
+									<div style="padding-top: 25px ">
+										<label for="address">Address</label>
+										<input class="input" type="text" name="address">
+										<span class="focus-input100" data-placeholder="address"></span>
+									</div>
+									<div style="padding-top: 25px" >
+										<label for="image" >Image</label>
+										<input type="file" class="form-control" id="image" placeholder="Enter Image" name="image" >
+										
 									</div>
 									
 									<div style="margin-top: 20px;" >
-										<button class="primary-btn cta-btn">
+										<button class="primary-btn cta-btn" type="submit">
 											Register
 										</button>
+										<a href="{{url('/')}}" class="primary-btn cta-btn">Cancel</a>
 									</div>
+									
 								</form>
 							</div>
 						</div>

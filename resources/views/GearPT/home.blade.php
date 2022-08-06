@@ -46,10 +46,22 @@
 						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i> 20 Cong Hoa Street</a></li>
 					</ul>
+
+					@if (Session::has('loginID'))
+						
 					<ul class="header-links pull-right">
-						<li><a href="{{url('login')}}"><i class="fa fa-user-o"></i> Login</a></li>
-						<li><a href="{{url('register')}}"><i class="fa fa-user-o"></i> Register</a></li>
+						<li><a href="#"><i class="fa fa-user-o"></i> Hello: {{Session::get('loginID')}}</a></li>
+						<li><a href="{{url('logout')}}"><i class="fa fa-user-o"></i> Logout</a></li>
 					</ul>
+						
+					@else
+						<ul class="header-links pull-right">
+							<li><a href="{{url('login')}}"><i class="fa fa-user-o"></i> Login</a></li>
+							<li><a href="{{url('register')}}"><i class="fa fa-user-o"></i> Register</a></li>
+						</ul>
+					
+					@endif
+					
 				</div>
 			</div>
 			<!-- /TOP HEADER -->
@@ -63,7 +75,7 @@
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
+								<a href="{{url('/')}}" class="logo">
 									<img src="./img/logo.png" alt="">
 								</a>
 							</div>
@@ -170,7 +182,7 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="{{url('/')}}">Home</a></li>
 						<li><a href="#">Hot Deals</a></li>
 						<li><a href="#">Categories</a></li>
 						<li><a href="#">Laptops</a></li>
