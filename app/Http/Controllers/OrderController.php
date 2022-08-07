@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Order;
+
 class OrderController extends Controller
 {
     public function index(){
@@ -13,7 +15,7 @@ class OrderController extends Controller
         return view('list-order', compact('data'));
     }
     public function addOrder(){
-        $orderIDdata = OrderID::get();
+        $orderIDdata = Order::get();
         return view('add-order', compact('orderIDdata'));
     }
     public function saveOrder(Request $request)

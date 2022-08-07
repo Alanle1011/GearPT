@@ -6,14 +6,21 @@ use App\Models\Producer;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductType;
-
+use Illuminate\Support\Facades\DB;
 use function GuzzleHttp\Promise\all;
 
 class ProductController extends Controller
 {
     public function index(){
-        $data = Product::get();
+        // $data = Product::get();
         
+
+        // return view('test', compact('data'));
+
+        $data = DB::table('products')
+        ->join('product_types','product_types.productTypeID','products.productTypeID')
+        ->select('products.*','product_types.productTypeName')
+        ->get();
 
         return view('list-product', compact('data'));
     }

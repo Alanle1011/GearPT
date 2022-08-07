@@ -223,8 +223,6 @@
 				<!-- row -->
 				<div class="row">
                     @foreach ($data as $row )
-                        
-                    @endforeach
                     <!-- product -->
                     <div class="col-md-3">
                         <div class="product">
@@ -232,9 +230,9 @@
                                 <img src="./img/product06.png" alt="">
                             </div>
                             <div class="product-body">
-                                <p class="product-category">{{url('')}}</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                <p class="product-category">{{$row->productTypeName}}</p>
+                                <h3 class="product-name"><a href="#">{{$row->productName}}</a></h3>
+                                <h4 class="product-price">{{$row->productPrice}} <del class="product-old-price">$990.00</del></h4>
                                 <div class="product-rating">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -254,6 +252,7 @@
                         </div>
                     </div>
                     <!-- /product -->
+					@endforeach
                 </div>
                 <!-- /row -->
 			</div>

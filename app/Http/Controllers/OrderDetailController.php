@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 
 class OrderDetailController extends Controller
@@ -13,7 +14,7 @@ class OrderDetailController extends Controller
         return view('list-OrderDetail', compact('data'));
     }
     public function addOrderDetail(){
-        $orderDetailsID = orderDetailsID::get();
+        $orderDetailsID = OrderDetail::get();
         return view('add-OrderDetail', compact('orderDetailsID'));
     }
     public function saveOrderDetail(Request $request)

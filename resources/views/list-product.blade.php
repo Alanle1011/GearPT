@@ -31,8 +31,9 @@
                             <th>Price</th>
                             <th>Description</th>
                             <th>Image</th>
-                            <th>Type</th>
                             <th>Producer</th>
+                            <th>Type</th>
+                            
                             
                             <th>Action</th>
                         </tr>
@@ -46,7 +47,7 @@
                             <td>{{$row->productDescription}}</td>
                             <td>{{$row->productImage}}</td>
                             <td>{{$row->producerID}}</td>
-                            <td>{{$row->productTypeID}}</td>
+                            <td>{{$row->productTypeName}}</td>
                             <td>
                                 <a href="{{url('edit-product/'.$row->productID)}}" class="btn btn-primary">Edit</a>
                                 <a href="{{url('delete-product/'.$row->productID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete this product')">Delete</a>
