@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OrderDetail;
 use Illuminate\Http\Request;
+use App\Models\OrderDetail;
 
 class OrderDetailController extends Controller
 {
@@ -11,28 +11,28 @@ class OrderDetailController extends Controller
         $data = OrderDetail::get();
         
 
-        return view('list-OrderDetail', compact('data'));
+        return view('list-orderdetail', compact('data'));
     }
     public function addOrderDetail(){
-        $orderDetailsID = OrderDetail::get();
-        return view('add-OrderDetail', compact('orderDetailsID'));
+        $orderDetailID = OrderDetail::get();
+        return view('add-orderdetail', compact('orderDetailID'));
     }
     public function saveOrderDetail(Request $request)
     {
 
         $request->validate([
-            'orderDetailsID' => 'required',
+            'orderDetailID' => 'required',
             'orderID' => 'required',
             'productID' => 'required'
         ]);
       
-        $orderDetailsID = $request->orderDetailsID;
+        $orderDetailID = $request->orderDetailID;
         $orderID = $request->orderID;
         $productID = $request->productID;
         
 
         $OrderDetail = new OrderDetail();
-        $OrderDetail->orderDetailsID = $orderDetailsID;
+        $OrderDetail->orderDetailID = $orderDetailID;
         $OrderDetail->orderID = $orderID;
         $OrderDetail->productID = $productID;
         $OrderDetail->save();
@@ -41,14 +41,14 @@ class OrderDetailController extends Controller
         return redirect()->back()->with('success','Order Detail Added Successfully');
     }
     public function editOrderDetail($id){
-        $data = OrderDetail::where('OrderDetailsID','=',$id)->first();
-        return view('edit-OrderDetail',compact('data'));
+        $data = OrderDetail::where('orderDetailID','=',$id)->first();
+        return view('edit-orderdetail',compact('data'));
     }
     public function updateOrderDetail(Request $request){
-        $id = $request->OrderDetailID;
+        $id = $request->orderDetailID;
 
-        OrderDetail::where('OrderDetailsID','=',$id)->update([
-            'orderDetailsID' => $request->orderDetailsID,
+        OrderDetail::where('orderDetailID','=',$id)->update([
+            'orderDetailID' => $request->orderDetailID,
             'orderID' => $request->orderID,
             'productID' => $request->productID,
         ]);
@@ -56,7 +56,7 @@ class OrderDetailController extends Controller
         return redirect()->back()->with('success','Order Detail Edited Successfully');
     }
     public function deleteOrderDetail($id){
-        OrderDetail::where('OrderDetailsID','=',$id)->delete();
+        OrderDetail::where('orderDetailID','=',$id)->delete();
         return redirect()->back()->with('success','Order Detail Deleted Successfully');
     }
 }

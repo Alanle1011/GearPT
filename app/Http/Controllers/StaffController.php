@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Staff;
 
 class StaffController extends Controller
 {
@@ -10,11 +11,11 @@ class StaffController extends Controller
         $data = Staff::get();
         
 
-        return view('list-Staff', compact('data'));
+        return view('list-staff', compact('data'));
     }
     public function addStaff(){
         $staffIDdata = StaffID::get();
-        return view('add-Staff', compact('staffIDdata'));
+        return view('add-staff', compact('staffIDdata'));
     }
     public function saveStaff(Request $request)
     {
@@ -24,8 +25,8 @@ class StaffController extends Controller
             'staffName' => 'required',
             'staffPhone' => 'required',
             'staffAddress' => 'required',
-            'staffUsername' => 'required'
-            'staffPassword' => 'required'
+            'staffUsername' => 'required',
+            'staffPassword' => 'required',
             'staffImage' => 'required'
         ]);
       
@@ -35,8 +36,10 @@ class StaffController extends Controller
         $staffAddress= $request->staffAddress;
         $staffUsername = $request->staffUsername;
         $staffPassword = $request->staffPassword;
-        $staffImage = $request->staffImage;
+        $staffImage= $request->file('staffImage')->getClientOriginalName();
         
+        //move Upladed file
+        $request->productImage->move(public_path('img/GearPT'),$productImage);
 
         $Staff = new Staff();
         $Staff->staffID = $staffID;
@@ -53,7 +56,7 @@ class StaffController extends Controller
     }
     public function editStaff($id){
         $data = Staff::where('staffID','=',$id)->first();
-        return view('edit-Staff',compact('data'));
+        return view('edit-staff',compact('data'));
     }
     public function updateStaff(Request $request){
         $id = $request->StaffID;
