@@ -29,7 +29,7 @@
 
             <div class="mb-3">
             <label for="productName" >Product Name</label>
-            <input type="text" class="form-control" id="productName" value="{{$data->productName}}" name="productName">
+            <input type="text" class="form-control" id="productName" value="{{$data->productName}}" name="productName" required>
             @error('productName')
             <div class="alert alert-danger" role="alert">
                 {{$message}}
@@ -48,17 +48,49 @@
             </div>
             <div class="mb-3" >
                 <label for="productDetail" >Product Image</label>
-                <input type="file" class="form-control" id="productImage" placeholder="Enter product Image" name="productImage" >
+                <input type="file" class="form-control" id="productImage" placeholder="Enter product Image" name="productImage" value="{{$data->productImage}}" required>
+                @error('productType')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
             </div>
 
             <div class="mb-3" >
                 <label for="productType" >Product Type</label>
-                <input type="text" class="form-control" id="productType" value="{{$data->productTypeID}}" name="productType" >
+                <select class="form-control" name="productType" id="productType"  require>
+                    <option value="{{$data->productTypeID}}">{{$data->productTypeID}}</option>
+                    @foreach($productTypedata as $row)
+                    <option value="{{$row->productTypeID}}"> 
+                        {{$row->productTypeID}} - {{$row->productTypeName}} 
+                    </option>
+                    @endforeach
+                </select>
+                @error('productType')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
             </div>
+            
             <div class="mb-3" >
                 <label for="productDetail" >Product Producer</label>
-                <input type="text" class="form-control" id="productProducer" value="{{$data->producerID}}" name="productProducer" >
+                <select class="form-control" name="producerID" id="producerID"  require>
+                    <option value="{{$data->producerID}}">{{$data->producerID}}</option>
+                    @foreach($producerdata as $row)
+                    <option value="{{$row->producerID}}"> 
+                        {{$row->producerID}} - {{$row->producerName}}
+                    </option>
+                    @endforeach
+                </select>
+                @error('productProducer')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
             </div>
+
+           
 
     
         

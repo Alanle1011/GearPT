@@ -19,7 +19,8 @@ class ProductController extends Controller
 
         $data = DB::table('products')
         ->join('product_types','product_types.productTypeID','products.productTypeID')
-        ->select('products.*','product_types.productTypeName')
+        ->join('producers','producers.producerID','products.producerID')
+        ->select('products.*','product_types.productTypeName','producers.producerName')
         ->get();
 
         return view('list-product', compact('data'));
@@ -43,10 +44,12 @@ class ProductController extends Controller
         $productName = $request->productName;
         $productPrice = $request->productPrice;
         $productDescription = $request->productDescription;
-        $productImage= $request->productImage;
+        $productImage= $request->file('productImage')->getClientOriginalName();
         $productType = $request->productType;
         $productProducer = $request->productProducer;
         
+        //move Upladed file
+        $request->productImage->move(public_path('img/GearPT'),$productImage);
 
         $prd = new Product();
         $prd->productName = $productName;
@@ -61,8 +64,13 @@ class ProductController extends Controller
         return redirect()->back()->with('success','Product Added Successfully');
     }
     public function editProduct($id){
+        
+
         $data = Product::where('productID','=',$id)->first();
-        return view('edit-product',compact('data'));
+        $productTypedata = ProductType::get();
+        $producerdata =Producer::get();
+        
+        return view('edit-product',compact('data','productTypedata','producerdata'));
     }
     public function updateProduct(Request $request){
         $id = $request->productID;

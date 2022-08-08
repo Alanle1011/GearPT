@@ -20,7 +20,7 @@
             {{Session::get('success')}}
         </div>
         @endif
-        <form action="{{url('save-product')}}" method="post" style="margin: 50px">
+        <form action="{{url('save-product')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
             @csrf
 
             <div class="mb-3">
@@ -50,7 +50,7 @@
             </div>
             <div class="mb-3" >
                 <label for="productImage" >Product Image</label>
-                <input type="file" class="form-control" id="productImage" placeholder="Enter product Image" name="productImage" >
+                <input type="file" class="form-control" id="productImage" name="productImage" >
                 @error('productImage')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}

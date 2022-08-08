@@ -14,7 +14,7 @@ class ProducerController extends Controller
         return view('list-producer', compact('data'));
     }
     public function addProducer(){
-        $producerID = ProducerID::get();
+        $producerID = Producer::get();
         return view('add-producer', compact('producerID'));
     }
     public function saveProducer(Request $request)
@@ -26,7 +26,7 @@ class ProducerController extends Controller
             'ProducerImage' => 'required'
         ]);
       
-        $productID = $request->productID;
+        $producerID = $request->producerID;
         $producerName = $request->producerName;
         $ProducerImage = $request->ProducerImage;
         

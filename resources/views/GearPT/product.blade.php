@@ -180,13 +180,10 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessories</a></li>
+						<ul class="main-nav nav navbar-nav">
+							<li><a href="{{url('/')}}">Home</a></li>
+							<li class="active"><a href="{{url('product')}}">Product</a></li>
+						</ul>
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -203,10 +200,10 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Regular Page</h3>
+						<h3 class="breadcrumb-header">Product Page</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
-							<li class="active">Blank</li>
+							<li><a href="{{url('/')}}">Home</a></li>
+							<li class="active">Product</li>
 						</ul>
 					</div>
 				</div>
@@ -227,7 +224,7 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-img">
-                                <img src="./img/product06.png" alt="">
+                                <img src="img/GearPT/{{$row->productImage}}" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">{{$row->productTypeName}}</p>
