@@ -9,6 +9,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ProducerController;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailController;
 use App\Models\ProductType;
 
 /*
@@ -30,6 +33,9 @@ Route::get('list-product',[ProductController::class,'index']);
 Route::get('list-admin',[AdminController::class,'index']);
 Route::get('list-feedback',[FeedbackController::class,'index']);
 Route::get('list-producer',[ProducerController::class,'index']);
+Route::get('list-staff',[StaffController::class,'index']);
+Route::get('list-order',[OrderController::class,'index']);
+Route::get('list-orderdetail',[OrderDetailController::class,'index']);
 
 Route::get('add-product',[ProductController::class,'addProduct']);
 Route::post('save-product',[ProductController::class,'saveProduct']);
