@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container mt-3" >
-        <h2>Add Student</h2>
+        <h2>Add Product</h2>
         @if(Session::has('success'))
         <div class="alert alert-success" role="alert">
             {{Session::get('success')}}
@@ -25,7 +25,7 @@
 
             <div class="mb-3">
                 <label for="productName" >Product Name</label>
-                <input type="text" class="form-control" id="productName" placeholder="Enter product name" name="productName">
+                <input type="text" class="form-control" id="productName" placeholder="Enter product name" name="productName" require>
                 @error('productName')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -35,7 +35,7 @@
         
             <div class="mb-3">
                 <label for="productPrice" >Product Price</label>
-                <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" name="productPrice"  require>
+                <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" name="productPrice" require>
                 @error('productPrice')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -45,12 +45,12 @@
 
             <div class="mb-3" >
                 <label for="productDescription" >Product Description</label>
-                <input type="text" class="form-control" id="productDescription" placeholder="Enter product Description" name="productDescription" >
-                
+                <input type="text" class="form-control" id="productDescription" placeholder="Enter product Description" name="productDescription">
             </div>
+            
             <div class="mb-3" >
                 <label for="productImage" >Product Image</label>
-                <input type="file" class="form-control" id="productImage" name="productImage" >
+                <input type="file" class="form-control" id="productImage" name="productImage" require>
                 @error('productImage')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -60,7 +60,7 @@
 
             <div class="mb-3" >
                 <label for="productType" >Product Type</label>
-                <select class="form-control" name="productType" id="productType"  require>
+                <select class="form-control" name="productType" id="productType" require>
                     <option value="" disabled selected>Select a Type</option>
                     @foreach($productTypedata as $row)
                     <option value="{{$row->productTypeID}}"> 
@@ -77,7 +77,7 @@
             
             <div class="mb-3" >
                 <label for="productDetail" >Product Producer</label>
-                <select class="form-control" name="productProducer" id="productProducer"  require>
+                <select class="form-control" name="productProducer" id="productProducer" require>
                     <option value="" disabled selected>Select a Type</option>
                     @foreach($producerdata as $row)
                     <option value="{{$row->producerID}}"> 

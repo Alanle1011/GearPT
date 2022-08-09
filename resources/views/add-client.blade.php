@@ -10,23 +10,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
     
-    <title>Staff Addition Page</title>
+    <title>Client Addition Page</title>
 </head>
 <body>
     <div class="container mt-3" >
-        <h2>Staff Addition</h2>
+        <h2>Client Addition</h2>
         @if(Session::has('success'))
         <div class="alert alert-success" role="alert">
             {{Session::get('success')}}
         </div>
         @endif
-        <form action="{{url('save-staff')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
+        <form action="{{url('save-client')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
             @csrf
 
             <div class="mb-3">
-                <label for="staffID" >ID</label>
-                <input type="text" class="form-control" id="staffID" placeholder="Enter client ID" name="staffID" require>
-                @error('staffID')
+                <label for="clientID" >ID</label>
+                <input type="text" class="form-control" id="clientID" placeholder="Enter client ID" name="clientID" require>
+                @error('clientID')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
@@ -34,9 +34,9 @@
             </div>
 
             <div class="mb-3">
-                <label for="staffName" >Full name</label>
-                <input type="text" class="form-control" id="staffName" placeholder="Enter staff name" name="staffName" require>
-                @error('staffName')
+                <label for="clientName" >Full name</label>
+                <input type="text" class="form-control" id="clientName" placeholder="Enter client name" name="clientName" require>
+                @error('clientName')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
@@ -44,9 +44,9 @@
             </div>
         
             <div class="mb-3">
-                <label for="staffPhone" >Phone</label>
-                <input type="number" class="form-control" id="staffPhone" placeholder="Enter staff price" name="staffPhone" require>
-                @error('staffPhone')
+                <label for="clientPhone" >Phone</label>
+                <input type="number" class="form-control" id="clientPhone" placeholder="Enter client price" name="clientPhone" require>
+                @error('clientPhone')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
@@ -54,28 +54,9 @@
             </div>
 
             <div class="mb-3" >
-                <label for="staffAddress" >Address</label>
-                <input type="number" class="form-control" id="staffAddress" placeholder="Enter staff address" name="staffAddress" require>
-                @error('staffAddress')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                 @enderror
-            </div>
-            <div class="mb-3" >
-                <label for="staffUsername" >Username</label>
-                <input type="file" class="form-control" id="staffUsername" placeholder="Enter staff username" name="staffUsername" require>
-                @error('staffUsername')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                 @enderror
-            </div>
-
-            <div class="mb-3" >
-                <label for="staffPassword" >Password</label>
-                <input type="file" class="form-control" id="staffPassword" placeholder="Enter staff password" name="staffPassword" require>
-                @error('staffPassword')
+                <label for="clientAddress" >Address</label>
+                <input type="number" class="form-control" id="clientAddress" placeholder="Enter client address" name="clientAddress" require>
+                @error('clientAddress')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
@@ -83,9 +64,29 @@
             </div>
             
             <div class="mb-3" >
-                <label for="staffImage" >Image</label>
-                <input type="file" class="form-control" id="staffImage" placeholder="Enter staff image" name="staffImage" require>
-                @error('staffImage')
+                <label for="clientUsername" >Username</label>
+                <input type="file" class="form-control" id="clientUsername" placeholder="Enter client username" name="clientUsername" require>
+                @error('clientUsername')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
+            </div>
+
+            <div class="mb-3" >
+                <label for="clientPassword" >Password</label>
+                <input type="file" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" require>
+                @error('clientPassword')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                 @enderror
+            </div>
+            
+            <div class="mb-3" >
+                <label for="clientImage" >Image</label>
+                <input type="file" class="form-control" id="clientImage" placeholder="Enter client image" name="clientImage" require>
+                @error('clientImage')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
@@ -96,8 +97,8 @@
 
         
 
-            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to ADD this staff')">Add</button>
-            <a href="{{url('list-staff')}}" class="btn btn-danger">Back</a>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to ADD this client')">Add</button>
+            <a href="{{url('list-client')}}" class="btn btn-danger">Back</a>
         </form>
            
 
