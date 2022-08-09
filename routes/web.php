@@ -76,6 +76,8 @@ Route::get('list-staff',[StaffController::class,'index']);
 // Other:
 Route::get('/',[HomeController::class,'index'],);
 Route::get('product',[HomeProductController::class,'index'],);
+Route::get('productDetail/{id}',[HomeProductController::class,'productDetail']);
+Route::get('search',[HomeProductController::class,'search']);
 Route::get('register',[ClientController::class,'register']);
 Route::post('register-process',[ClientController::class,'registerProcess']);
 Route::get('login',[ClientController::class,'login']);
