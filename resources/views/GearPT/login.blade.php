@@ -174,13 +174,7 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav nav navbar-nav">
-                    <li class="active"><a href="{{url('/')}}">Home</a></li>
-                    <li><a href="#">Hot Deals</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Laptops</a></li>
-                    <li><a href="#">Smartphones</a></li>
-                    <li><a href="#">Cameras</a></li>
-                    <li><a href="#">Accessories</a></li>
+                    <li><a href="{{url('/')}}">Home</a></li>
                 </ul>
                 <!-- /NAV -->
             </div>
@@ -197,10 +191,10 @@
             <!-- row -->
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="breadcrumb-header">Regular Page</h3>
+                    <h3 class="breadcrumb-header">Login Page</h3>
                     <ul class="breadcrumb-tree">
                         <li><a href="{{url('/')}}">Home</a></li>
-                        <li class="active">Blank</li>
+                        <li class="active">Login</li>
                     </ul>
                 </div>
             </div>
@@ -262,7 +256,7 @@
                                     <a href="{{url('/')}}" class="primary-btn cta-btn">Cancel</a> 
                                 </div>
 
-                                <div class="text-center p-t-115">
+                                <div class="text-center p-t-115" style="margin-top: 30px">
                                     <span class="txt1">
                                         Don’t have an account?
                                     </span>
