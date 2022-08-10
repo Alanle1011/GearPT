@@ -81,7 +81,7 @@ class ProductController extends Controller
             'productDescription' => $request->productDescription,
             'productImage' => $request->productImage,
             'productTypeID' => $request->productType,
-            'producerID' => $request->productProducer
+            'producerID' => $request->producerID
 
         ]);
         return redirect()->back()->with('success','Product Edited Successfully');
