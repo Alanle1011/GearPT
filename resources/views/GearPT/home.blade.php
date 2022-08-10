@@ -274,7 +274,7 @@
 										<div class="col-md-3">
 											<div class="product">
 												<div class="product-img">
-													<img src="./img/GearPT/{{$row->productImage}}" sizes="600x600" alt="">
+													<img src="./img/GearPT/{{$row->productImage}}" height="250px" width="250px" alt="">
 												</div>
 												<div class="product-body">
 													<p class="product-category">{{$row->productTypeName}}</p>
