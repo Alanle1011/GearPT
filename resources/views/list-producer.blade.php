@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Order Detail List Page</title>
+    <title>Producer List Page</title>
 </head>
 <body>
     <div class="container" >
@@ -19,28 +19,29 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-                <h2>Order Detail List</h2>
-                <div >
-                    <a href="{{url('add-orderdetail')}}" class="btn btn-dark" style="float: right; margin-right: 20px;"  >Add</a>
+                <h2>Producer List</h2>
+                <div>
+                    <a href="{{url('add-producer')}}" class="btn btn-dark" style="float: right; margin-right: 20px;"  >Add</a>
                 </div>
                 <table class="table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Order ID</th>
-                            <th>Product ID</th>
-                            <th style="width: 200px">Action</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($data as $row)
                         <tr>
-                            <td>{{$row->orderDetailID}}</td>
-                            <td>{{$row->orderID}}</td>
-                            <td>{{$row->productID}}</td>
+                            <td>{{$row->producerID}}</td>
+                            <td>{{$row->producerName}}</td>
+                            <td>{{$row->producerImage}}</td>
                             <td>
-                                <a href="{{url('edit-orderdetail/'.$row->orderdetailID)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{url('delete-orderdetail/'.$row->orderdetailID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete this order detail')">Delete</a>
+                                <a href="{{url('edit-producer/'.$row->producerID)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{url('delete-producer/'.$row->producerID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete this admin')">Delete</a>
                             </td>
                         </tr>
                         @endforeach

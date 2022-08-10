@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\OrderDetail;
 
+
 class OrderDetailController extends Controller
 {
     public function index(){
@@ -14,25 +15,21 @@ class OrderDetailController extends Controller
         return view('list-orderdetail', compact('data'));
     }
     public function addOrderDetail(){
-        $orderDetailID = OrderDetail::get();
-        return view('add-orderdetail', compact('orderDetailID'));
+        return view('add-orderdetail');
     }
     public function saveOrderDetail(Request $request)
     {
 
         $request->validate([
-            'orderDetailID' => 'required',
             'orderID' => 'required',
             'productID' => 'required'
         ]);
       
-        $orderDetailID = $request->orderDetailID;
         $orderID = $request->orderID;
         $productID = $request->productID;
         
 
         $OrderDetail = new OrderDetail();
-        $OrderDetail->orderDetailID = $orderDetailID;
         $OrderDetail->orderID = $orderID;
         $OrderDetail->productID = $productID;
         $OrderDetail->save();
@@ -48,7 +45,6 @@ class OrderDetailController extends Controller
         $id = $request->orderDetailID;
 
         OrderDetail::where('orderDetailID','=',$id)->update([
-            'orderDetailID' => $request->orderDetailID,
             'orderID' => $request->orderID,
             'productID' => $request->productID,
         ]);

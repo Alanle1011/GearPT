@@ -10,17 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
     
-    <title>Order Addition Page</title>
+    <title>Feedback Addition Page</title>
 </head>
 <body>
     <div class="container mt-3" >
-        <h2>Order Addition</h2>
+        <h2>Feedback Addition</h2>
         @if(Session::has('success'))
         <div class="alert alert-success" role="alert">
             {{Session::get('success')}}
         </div>
         @endif
-        <form action="{{url('save-order')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
+        
+        <form action="{{url('save-feedback')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
             @csrf
 
             <div class="mb-3">
@@ -47,11 +48,26 @@
                 <label for="ranking" >Ranking</label>
                 <select class="form-control" name="ranking" id="ranking" require>
                     <option value="" disabled selected>Select Rank</option>
-                    @foreach($rankingdata as $row)
-                    <option value="{{$row->ranking}}"> 
-                        {{$row->ranking}} - {{$row->ranking}}
+                  
+                    <option value="0"> 
+                       0
                     </option>
-                    @endforeach
+                    <option value="1"> 
+                       1
+                    </option>
+                    <option value="2"> 
+                       2
+                    </option>
+                    <option value="3"> 
+                       3
+                    </option>
+                    <option value="4"> 
+                       4
+                    </option>
+                    <option value="5"> 
+                       5
+                    </option>
+                    
                 </select>
                 @error('ranking')
                     <div class="alert alert-danger" role="alert">
@@ -60,12 +76,20 @@
                  @enderror
             </div>
             
-
+            <div class="mb-3">
+                <label for="comment" >Comment</label>
+                <input type="text" class="form-control" id="comment" placeholder="Enter comment" name="comment">
+                @error('comment')
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
+            </div>
         
         
 
-            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to ADD this order')">Add</button>
-            <a href="{{url('list-order')}}" class="btn btn-danger">Back</a>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to ADD this feedback')">Add</button>
+            <a href="{{url('list-feedback')}}" class="btn btn-danger">Back</a>
         </form>
            
 

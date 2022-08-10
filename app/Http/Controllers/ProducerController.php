@@ -14,27 +14,27 @@ class ProducerController extends Controller
         return view('list-producer', compact('data'));
     }
     public function addProducer(){
-        $producerID = Producer::get();
-        return view('add-producer', compact('producerID'));
+       
+        return view('add-producer');
     }
     public function saveProducer(Request $request)
     {
 
         $request->validate([
-            'producerID' => 'required',
+          
             'producerName' => 'required',
-            'ProducerImage' => 'required'
+            'producerImage' => 'required'
         ]);
       
-        $producerID = $request->producerID;
+   
         $producerName = $request->producerName;
-        $ProducerImage = $request->ProducerImage;
+        $producerImage = $request->producerImage;
         
 
         $Producer = new Producer();
-        $Producer->producerID = $producerID;
+       
         $Producer->producerName = $producerName;
-        $Producer->ProducerImage = $ProducerImage;
+        $Producer->producerImage = $producerImage;
         $Producer->save();
         
 
@@ -45,7 +45,7 @@ class ProducerController extends Controller
         return view('edit-producer',compact('data'));
     }
     public function updateProducer(Request $request){
-        $id = $request->ProducerID;
+        $id = $request->producerID;
 
         Producer::where('producerID','=',$id)->update([
             'producerID' => $request->producerID,

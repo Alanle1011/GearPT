@@ -24,16 +24,6 @@
             @csrf
 
             <div class="mb-3">
-                <label for="orderDetailID" >ID</label>
-                <input type="text" class="form-control" id="orderDetailID" placeholder="Enter client ID" name="orderDetailID" require>
-                @error('orderDetailID')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                @enderror
-            </div>
-        
-            <div class="mb-3">
                 <label for="orderID" >Order ID</label>
                 <input type="text" class="form-control" id="orderID" placeholder="Enter client name" name="orderID" require>
                 @error('orderID')
@@ -53,10 +43,7 @@
                  @enderror
             </div>
 
-            <div class="mb-3" >
-                <label for="orderDescription" >Description</label>
-                <input type="text" class="form-control" id="orderDescription" placeholder="Enter product Description" name="orderDescription">
-            </div>
+            
             
 
         

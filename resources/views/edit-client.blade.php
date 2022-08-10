@@ -10,62 +10,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
     
-    <title>Client Addition Page</title>
+    <title>Client Editing Page</title>
 </head>
 <body>
     <div class="container mt-3" >
-        <h2>Client Addition</h2>
+        <h2>Client Editing</h2>
         @if(Session::has('success'))
         <div class="alert alert-success" role="alert">
             {{Session::get('success')}}
         </div>
         @endif
-        <form action="{{url('save-client')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
+        <form action="{{url('update-client')}}" method="post" style="margin: 50px">
             @csrf
-
             <div class="mb-3">
                 <label for="clientID" >ID</label>
-                <input type="text" class="form-control" id="clientID" placeholder="Enter client ID" name="clientID" require>
-                @error('clientID')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                @enderror
+                <input type="text" class="form-control" id="clientID" name="clientID" value="{{$data->clientID}}" readonly >
             </div>
 
             <div class="mb-3">
-                <label for="clientName" >Full name</label>
-                <input type="text" class="form-control" id="clientName" placeholder="Enter client name" name="clientName" require>
-                @error('clientName')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                @enderror
+                <label for="clientName" >Name</label>
+                <input type="text" class="form-control" id="clientName" value="{{$data->clientName}}" name="clientName" required>
+            @error('clientName')
+            <div class="alert alert-danger" role="alert">
+                {{$message}}
+            </div>
+            @enderror
             </div>
         
             <div class="mb-3">
-                <label for="clientPhone" >Phone</label>
-                <input type="number" class="form-control" id="clientPhone" placeholder="Enter client price" name="clientPhone" require>
-                @error('clientPhone')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                 @enderror
+            <label for="clientPhone" >Phone</label>
+            <input type="number" class="form-control" id="clientPhone" value="{{$data->clientPhone}}" name="clientPhone"  require>
             </div>
 
             <div class="mb-3" >
                 <label for="clientAddress" >Address</label>
-                <input type="number" class="form-control" id="clientAddress" placeholder="Enter client address" name="clientAddress" require>
-                @error('clientAddress')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                 @enderror
+                <input type="text" class="form-control" id="clientAddress" value="{{$data->clientAddress}}" name="clientAddress" >
             </div>
-            
             <div class="mb-3" >
                 <label for="clientUsername" >Username</label>
-                <input type="file" class="form-control" id="clientUsername" placeholder="Enter client username" name="clientUsername" require>
+                <input type="text" class="form-control" id="clientUsername" placeholder="Enter client username" name="clientUsername" value="{{$data->clientUsername}}" required>
                 @error('clientUsername')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -75,17 +58,17 @@
 
             <div class="mb-3" >
                 <label for="clientPassword" >Password</label>
-                <input type="file" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" require>
+                <input type="text" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" value="{{$data->clientPassword}}" required>
                 @error('clientPassword')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
                  @enderror
             </div>
-            
+
             <div class="mb-3" >
                 <label for="clientImage" >Image</label>
-                <input type="file" class="form-control" id="clientImage" placeholder="Enter client image" name="clientImage" require>
+                <input type="file" class="form-control" id="clientImage" placeholder="Enter client image" name="clientImage" value="{{$data->clientImage}}" required>
                 @error('clientImage')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -93,11 +76,13 @@
                  @enderror
             </div>
 
+
+           
+
+    
         
 
-        
-
-            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to ADD this client')">Add</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to EDIT this client')">Edit</button>
             <a href="{{url('list-client')}}" class="btn btn-danger">Back</a>
         </form>
            

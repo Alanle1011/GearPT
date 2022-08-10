@@ -14,14 +14,14 @@ class StaffController extends Controller
         return view('list-staff', compact('data'));
     }
     public function addStaff(){
-        $staffIDdata = StaffID::get();
-        return view('add-staff', compact('staffIDdata'));
+       
+        return view('add-staff');
     }
     public function saveStaff(Request $request)
     {
 
         $request->validate([
-            'staffID' => 'required',
+            
             'staffName' => 'required',
             'staffPhone' => 'required',
             'staffAddress' => 'required',
@@ -30,7 +30,7 @@ class StaffController extends Controller
             'staffImage' => 'required'
         ]);
       
-        $staffID = $request->staffID;
+     
         $staffName = $request->staffName;
         $staffPhone = $request->staffPhone;
         $staffAddress= $request->staffAddress;
@@ -39,10 +39,10 @@ class StaffController extends Controller
         $staffImage= $request->file('staffImage')->getClientOriginalName();
         
         //move Upladed file
-        $request->productImage->move(public_path('img/GearPT'),$productImage);
+        $request->staffImage->move(public_path('img/GearPT'),$staffImage);
 
         $Staff = new Staff();
-        $Staff->staffID = $staffID;
+     
         $Staff->staffName = $staffName;
         $Staff->staffPhone = $staffPhone;
         $Staff->staffAddress = $staffAddress;
@@ -58,11 +58,10 @@ class StaffController extends Controller
         $data = Staff::where('staffID','=',$id)->first();
         return view('edit-staff',compact('data'));
     }
-    public function updateStaff(Request $request){
-        $id = $request->StaffID;
+    public function updatseStaff(Request $request){
+        $id = $request->staffID;
 
         Staff::where('staffID','=',$id)->update([
-            'staffID' => $request->staffID,
             'staffName' => $request->staffName,
             'staffPhone' => $request->staffPhone,
             'staffAddress' => $request->staffAddress,

@@ -14,25 +14,25 @@ class OrderController extends Controller
         return view('list-order', compact('data'));
     }
     public function addOrder(){
-        $orderIDdata = Order::get();
-        return view('add-order', compact('orderIDdata'));
+      
+        return view('add-order');
     }
     public function saveOrder(Request $request)
     {
 
         $request->validate([
-            'orderID' => 'required',
+          
             'clientID' => 'required',
             'orderStatus' => 'required'
         ]);
       
-        $orderID = $request->orderID;
+        
         $clientID = $request->clientID;
         $orderStatus = $request->orderStatus;
         
 
         $order = new Order();
-        $order->orderID = $orderID;
+       
         $order->clientID = $clientID;
         $order->orderStatus = $orderStatus;
         $order->save();

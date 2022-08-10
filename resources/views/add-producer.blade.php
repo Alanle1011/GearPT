@@ -10,62 +10,47 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
     
-    <title>Feedback Addition Page</title>
+    <title>Producer Addition Page</title>
 </head>
 <body>
     <div class="container mt-3" >
-        <h2>Feedback Addition</h2>
+        <h2>Producer Addition</h2>
         @if(Session::has('success'))
         <div class="alert alert-success" role="alert">
             {{Session::get('success')}}
         </div>
         @endif
-        <form action="{{url('save-feedback')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
+        <form action="{{url('save-producer')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
             @csrf
 
+           
+
             <div class="mb-3">
-                <label for="clientID" >Client ID</label>
-                <input type="text" class="form-control" id="clientID" placeholder="Enter client ID" name="clientID" require>
-                @error('clientID')
+                <label for="producerName" >Name</label>
+                <input type="text" class="form-control" id="producerName" placeholder="Enter producer name" name="producerName" require>
+                @error('producerName')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
                 @enderror
             </div>
         
-            <div class="mb-3">
-                <label for="productID" >Product ID</label>
-                <input type="number" class="form-control" id="productID" placeholder="Enter product ID" name="productID" require>
-                @error('productID')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                 @enderror
-            </div>
-
             <div class="mb-3" >
-                <label for="ranking" >Ranking</label>
-                <select class="form-control" name="ranking" id="ranking" require>
-                    <option value="" disabled selected>Select Rank</option>
-                    @foreach($rankingdata as $row)
-                    <option value="{{$row->ranking}}"> 
-                        {{$row->ranking}} - {{$row->ranking}}
-                    </option>
-                    @endforeach
-                </select>
-                @error('ranking')
+                <label for="producerImage" >Image</label>
+                <input type="file" class="form-control" id="producerImage" placeholder="Enter producer image" name="producerImage" require>
+                @error('producerImage')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
                  @enderror
             </div>
-            
 
         
+
         
 
-            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to ADD this feedback')">Add</button>
-            <a href="{{url('list-feedback')}}" class="btn btn-danger">Back</a>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to ADD this producer')">Add</button>
+            <a href="{{url('list-producer')}}" class="btn btn-danger">Back</a>
         </form>
            
 

@@ -20,12 +20,17 @@
                 </div>
             @endif
                 <h2>Feedback List</h2>
+                <div >
+                    <a href="{{url('add-feedback')}}" class="btn btn-dark" style="float: right; margin-right: 20px;"  >Add</a>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>Feedback ID</th>
                             <th>Client ID</th>
                             <th>Producer ID</th>
                             <th>Ranking</th>
+                            <th>Comment</th>
                             
                             <th>Action</th>
                         </tr>
@@ -33,12 +38,14 @@
                     <tbody>
                         @foreach($data as $row)
                         <tr>
+                            <td>{{$row->feedbackID}}</td>
                             <td>{{$row->clientID}}</td>
                             <td>{{$row->productID}}</td>
                             <td>{{$row->ranking}}</td>
+                            <td>{{$row->comment}}</td>
                             <td>
-                                <a href="{{url('edit-admin/'.$row->clientID)}}" class="btn btn-primary">Edit</a>
-                                <a href="{{url('delete-admin/'.$row->clientID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete this admin')">Delete</a>
+                                <a href="{{url('edit-feedback/'.$row->feedbackID)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{url('delete-feedback/'.$row->feedbackID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete this admin')">Delete</a>
                             </td>
                         </tr>
                         @endforeach

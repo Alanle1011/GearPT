@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Feedback;
+use App\Models\Client;
+use App\Models\Product;
 
 class FeedbackController extends Controller
 {
@@ -30,6 +32,7 @@ class FeedbackController extends Controller
       
         $clientID = $request->clientID;
         $productID = $request->productID;
+        $comment = $request->comment;
         $ranking = $request->ranking;
         
 
@@ -37,27 +40,29 @@ class FeedbackController extends Controller
         $feedback->clientID = $clientID;
         $feedback->productID = $productID;
         $feedback->ranking = $ranking;
+        $feedback->comment =$comment;
         $feedback->save();
         
 
         return redirect()->back()->with('success','Feedback Added Successfully');
     }
     public function editFeedback($id){
-        $data = Feedback::where('clientID','=',$id)->first();
+        $data = Feedback::where('feedbackID','=',$id)->first();
         return view('edit-feedback',compact('data'));
     }
     public function updateFeedback(Request $request){
-        $id = $request->clientID;
+        $id = $request->feedbackID;
 
-        Feedback::where('clientID','=',$id)->update([
+        Feedback::where('feedbackID','=',$id)->update([
             'clientID' => $request->clientID,
             'productID' => $request->productID,
-            'ranking' => $request->ranking
+            'ranking' => $request->ranking,
+            'comment' => $request->comment
         ]);
         return redirect()->back()->with('success','Feedback Edited Successfully');
     }
     public function deleteFeedback($id){
-        Feedback::where('clientID','=',$id)->delete();
+        Feedback::where('feedbackID','=',$id)->delete();
         return redirect()->back()->with('success','Feedback Deleted Successfully');
     }
 }
