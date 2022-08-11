@@ -126,5 +126,7 @@ Route::get('logout',[ClientController::class,'logout']);
 
 
 //Admin
-Route::get('admin-dashboard',[AdminController::class,'dashboard']);
-
+Route::get('admin-dashboard',[AdminController::class,'dashboard'])->middleware('isLogin');
+Route::get('admin-login',[AdminController::class,'login']);
+Route::post('admin-login-process',[AdminController::class,'loginProcess']);
+Route::get('admin-logout',[AdminController::class,'logout']);

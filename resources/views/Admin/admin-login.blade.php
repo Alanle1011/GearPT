@@ -48,10 +48,7 @@
                     <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
                     <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
                 </ul>
-                <ul class="header-links pull-right">
-                    <li><a href="{{url('login')}}"><i class="fa fa-user-o"></i> Login</a></li>
-                    <li><a href="{{url('register')}}"><i class="fa fa-user-o"></i> Register</a></li>
-                </ul>
+                
             </div>
         </div>
         <!-- /TOP HEADER -->
@@ -223,7 +220,7 @@
                                     {{Session::get('fail')}}
                                 </div>	
 							@endif
-                            <form action="{{url('login-process')}}" method="post">
+                            <form action="{{url('admin-login-process')}}" method="post">
                                 @csrf
                                 <div style="align-content: center;">
                                     <h2 style="text-align: center">Login</h2>
@@ -256,14 +253,7 @@
                                     <a href="{{url('/')}}" class="primary-btn cta-btn">Cancel</a> 
                                 </div>
 
-                                <div class="text-center p-t-115" style="margin-top: 30px">
-                                    <span class="txt1">
-                                        Don’t have an account?
-                                    </span>
-                                    <a class="txt2" href="{{ url('register') }}">
-                                        Sign Up
-                                    </a>
-                                </div>
+                                
                             </form>
                         </div>
                     </div>
