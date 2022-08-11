@@ -13,4 +13,8 @@ class AdminController extends Controller
 
         return view('list-admin', compact('data'));
     }
+
+    public function dashboard(){
+        return view('Admin/dashboard');
+    }
 }

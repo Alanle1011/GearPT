@@ -124,3 +124,7 @@ Route::get('login',[ClientController::class,'login']);
 Route::post('login-process',[ClientController::class,'loginProcess']);
 Route::get('logout',[ClientController::class,'logout']);
 
+
+//Admin
+Route::get('admin-dashboard',[AdminController::class,'dashboard']);
+
