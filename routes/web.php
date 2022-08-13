@@ -44,78 +44,78 @@ use App\Http\Controllers\StaffController;
 
 
 // Admin:
-Route::get('list-admin',[AdminController::class,'index']);
-Route::post('save-admin',[AdminController::class,'saveAdmin']);
+Route::get('list-admin',[AdminController::class,'index'])->middleware('isLogin');
+Route::post('save-admin',[AdminController::class,'saveAdmin'])->middleware('isLogin');
 
 // Client:
-Route::get('list-client',[ClientController::class,'index']);
-Route::get('add-client',[ClientController::class,'addClient']);
-Route::post('save-client',[ClientController::class,'saveClient']);
-Route::get('edit-client/{id}',[ClientController::class,'editClient']);
-Route::post('update-client',[ClientController::class,'updateClient']);
-Route::get('delete-client/{id}',[ClientController::class,'deleteClient']);
+Route::get('list-client',[ClientController::class,'index'])->middleware('isLogin');
+Route::get('add-client',[ClientController::class,'addClient'])->middleware('isLogin');
+Route::post('save-client',[ClientController::class,'saveClient'])->middleware('isLogin');
+Route::get('edit-client/{id}',[ClientController::class,'editClient'])->middleware('isLogin');
+Route::post('update-client',[ClientController::class,'updateClient'])->middleware('isLogin');
+Route::get('delete-client/{id}',[ClientController::class,'deleteClient'])->middleware('isLogin');
 
 // Feedback:
-Route::get('list-feedback',[FeedbackController::class,'index']);
-Route::get('add-feedback',[FeedbackController::class,'addFeedback']);
-Route::post('save-feedback',[FeedbackController::class,'saveFeedback']);
-Route::get('edit-feedback/{id}',[FeedbackController::class,'editFeedback']);
-Route::post('update-feedback',[FeedbackController::class,'updateFeedback']);
-Route::get('delete-feedback/{id}',[FeedbackController::class,'deleteFeedback']);
+Route::get('list-feedback',[FeedbackController::class,'index'])->middleware('isLogin');
+Route::get('add-feedback',[FeedbackController::class,'addFeedback'])->middleware('isLogin');
+Route::post('save-feedback',[FeedbackController::class,'saveFeedback'])->middleware('isLogin');
+Route::get('edit-feedback/{id}',[FeedbackController::class,'editFeedback'])->middleware('isLogin');
+Route::post('update-feedback',[FeedbackController::class,'updateFeedback'])->middleware('isLogin');
+Route::get('delete-feedback/{id}',[FeedbackController::class,'deleteFeedback'])->middleware('isLogin');
 
 // Order:
-Route::get('list-order',[OrderController::class,'index']);
-Route::get('add-order',[OrderController::class,'addOrder']);
-Route::post('save-order',[OrderController::class,'saveOrder']);
-Route::get('edit-order/{id}',[OrderController::class,'editOrder']);
-Route::post('update-order',[OrderController::class,'updateOrder']);
-Route::get('delete-order/{id}',[OrderController::class,'deleteOrder']);
+Route::get('list-order',[OrderController::class,'index'])->middleware('isLogin');
+Route::get('add-order',[OrderController::class,'addOrder'])->middleware('isLogin');
+Route::post('save-order',[OrderController::class,'saveOrder'])->middleware('isLogin');
+Route::get('edit-order/{id}',[OrderController::class,'editOrder'])->middleware('isLogin');
+Route::post('update-order',[OrderController::class,'updateOrder'])->middleware('isLogin');
+Route::get('delete-order/{id}',[OrderController::class,'deleteOrder'])->middleware('isLogin');
 
 // Order Detail:
-Route::get('list-orderdetail',[OrderDetailController::class,'index']);
-Route::get('add-orderdetail',[OrderDetailController::class,'addOrderDetail']);
-Route::post('save-orderdetail',[OrderDetailController::class,'saveOrderDetail']);
-Route::get('edit-orderdetail/{id}',[OrderDetailController::class,'editOrderDetail']);
-Route::post('update-orderdetail',[OrderDetailController::class,'updateOrderDetail']);
-Route::get('delete-orderdetail/{id}',[OrderDetailController::class,'deleteOrderDetail']);
+Route::get('list-orderdetail',[OrderDetailController::class,'index'])->middleware('isLogin');
+Route::get('add-orderdetail',[OrderDetailController::class,'addOrderDetail'])->middleware('isLogin');
+Route::post('save-orderdetail',[OrderDetailController::class,'saveOrderDetail'])->middleware('isLogin');
+Route::get('edit-orderdetail/{id}',[OrderDetailController::class,'editOrderDetail'])->middleware('isLogin');
+Route::post('update-orderdetail',[OrderDetailController::class,'updateOrderDetail'])->middleware('isLogin');
+Route::get('delete-orderdetail/{id}',[OrderDetailController::class,'deleteOrderDetail'])->middleware('isLogin');
 
 // Producer:
-Route::get('list-producer',[ProducerController::class,'index']);
-Route::get('add-producer',[ProducerController::class,'addProducer']);
-Route::post('save-producer',[ProducerController::class,'saveProducer']);
-Route::get('edit-producer/{id}',[ProducerController::class,'editProducer']);
-Route::post('update-producer',[ProducerController::class,'updateProducer']);
-Route::get('delete-producer/{id}',[ProducerController::class,'deleteProducer']);
+Route::get('list-producer',[ProducerController::class,'index'])->middleware('isLogin');
+Route::get('add-producer',[ProducerController::class,'addProducer'])->middleware('isLogin');
+Route::post('save-producer',[ProducerController::class,'saveProducer'])->middleware('isLogin');
+Route::get('edit-producer/{id}',[ProducerController::class,'editProducer'])->middleware('isLogin');
+Route::post('update-producer',[ProducerController::class,'updateProducer'])->middleware('isLogin');
+Route::get('delete-producer/{id}',[ProducerController::class,'deleteProducer'])->middleware('isLogin');
 
 // Product:
-Route::get('list-product',[ProductController::class,'index']);
-Route::get('add-product',[ProductController::class,'addProduct']);
-Route::post('save-product',[ProductController::class,'saveProduct']);
-Route::get('edit-product/{id}',[ProductController::class,'editProduct']);
-Route::post('update-product',[ProductController::class,'updateProduct']);
-Route::get('delete-product/{id}',[ProductController::class,'deleteProduct']);
+Route::get('list-product',[ProductController::class,'index'])->middleware('isLogin');
+Route::get('add-product',[ProductController::class,'addProduct'])->middleware('isLogin');
+Route::post('save-product',[ProductController::class,'saveProduct'])->middleware('isLogin');
+Route::get('edit-product/{id}',[ProductController::class,'editProduct'])->middleware('isLogin');
+Route::post('update-product',[ProductController::class,'updateProduct'])->middleware('isLogin');
+Route::get('delete-product/{id}',[ProductController::class,'deleteProduct'])->middleware('isLogin');
 
 // Product Type:
-Route::get('list-producttype',[ProductTypeController::class,'index']);
-Route::get('add-producttype',[ProductTypeController::class,'addProductType']);
-Route::post('save-producttype',[ProductTypeController::class,'saveProductType']);
-Route::get('edit-producttype/{id}',[ProductTypeController::class,'editProductType']);
-Route::post('update-producttype',[ProductTypeController::class,'updateProductType']);
-Route::get('delete-producttype/{id}',[ProductTypeController::class,'deleteProductType']);
+Route::get('list-producttype',[ProductTypeController::class,'index'])->middleware('isLogin');
+Route::get('add-producttype',[ProductTypeController::class,'addProductType'])->middleware('isLogin');
+Route::post('save-producttype',[ProductTypeController::class,'saveProductType'])->middleware('isLogin');
+Route::get('edit-producttype/{id}',[ProductTypeController::class,'editProductType'])->middleware('isLogin');
+Route::post('update-producttype',[ProductTypeController::class,'updateProductType'])->middleware('isLogin');
+Route::get('delete-producttype/{id}',[ProductTypeController::class,'deleteProductType'])->middleware('isLogin');
 
 // Staff:
-Route::get('list-staff',[StaffController::class,'index']);
-Route::get('add-staff',[StaffController::class,'addStaff']);
-Route::post('save-staff',[StaffController::class,'saveStaff']);
-Route::get('edit-staff/{id}',[StaffController::class,'editStaff']);
-Route::post('update-staff',[StaffController::class,'updateStaff']);
-Route::get('delete-staff/{id}',[StaffController::class,'deleteStaff']);
+Route::get('list-staff',[StaffController::class,'index'])->middleware('isLogin');
+Route::get('add-staff',[StaffController::class,'addStaff'])->middleware('isLogin');
+Route::post('save-staff',[StaffController::class,'saveStaff'])->middleware('isLogin');
+Route::get('edit-staff/{id}',[StaffController::class,'editStaff'])->middleware('isLogin');
+Route::post('update-staff',[StaffController::class,'updateStaff'])->middleware('isLogin');
+Route::get('delete-staff/{id}',[StaffController::class,'deleteStaff'])->middleware('isLogin');
 
 
 
 // Other:
-Route::get('/',[HomeController::class,'index'],);
-Route::get('product',[HomeProductController::class,'index'],);
+Route::get('/',[HomeController::class,'index']);
+Route::get('product',[HomeProductController::class,'index']);
 Route::get('productDetail/{id}',[HomeProductController::class,'productDetail']);
 Route::get('search',[HomeProductController::class,'search']);
 Route::get('register',[ClientController::class,'register']);

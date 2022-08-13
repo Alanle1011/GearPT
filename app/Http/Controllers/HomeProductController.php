@@ -25,7 +25,7 @@ class HomeProductController extends Controller
             ->join('product_types','product_types.productTypeID','products.productTypeID')
             ->select('products.*','product_types.productTypeName') 
             -> where('productName','LIKE','%'.$search_text.'%')
-            ->paginate(8);
+            ->paginate(2);
 
             $data->appends($request->all());
 

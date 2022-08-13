@@ -90,4 +90,30 @@ class ProductController extends Controller
         Product::where('productID','=',$id)->delete();
         return redirect()->back()->with('success','Product Deleted Successfully');
     }
+
+    public function simpleSeacrh(Request $request)
+    {
+        $data = DB::table('people');
+        if( $request->input('search')){
+            $data = $data->where('name', 'LIKE', "%" . $request->search . "%");
+        }
+        $data = $data->paginate(10);
+        return view('search', compact('data'));
+    }
+    public function advanceSearch(Request $request)
+    {
+        $data = DB::table('people');
+        if( $request->name){
+            $data = $data->where('name', 'LIKE', "%" . $request->name . "%");
+        }
+        if( $request->address){
+            $data = $data->where('address', 'LIKE', "%" . $request->address . "%");
+        }
+        if( $request->min_age && $request->max_age ){
+            $data = $data->where('age', '>=', $request->min_age)
+                         ->where('age', '<=', $request->max_age);
+        }
+        $data = $data->paginate(10);
+        return view('search', compact('data'));
+    }
 }

@@ -85,12 +85,9 @@
     <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="theme-assets/images/backgrounds/02.jpg">
       <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">       
-<<<<<<< Updated upstream
-          <li class="nav-item mr-auto"><a class="navbar-brand" href="index.html"><img class="brand-logo" alt="Chameleon admin logo" src="theme-assets/images/logo/logo_gearpt_5.png" height="36" width="39"/>
-=======
-          <li class="nav-item mr-auto"><a class="navbar-brand" href="{{url('admin-dashboard')}}"><img class="brand-logo" alt="Chameleon admin logo" src="theme-assets/images/logo/logo.png"/>
->>>>>>> Stashed changes
-              <h3 class="brand-text">GearPT</h3></a></li>
+
+          <li class="nav-item mr-auto"><a class="navbar-brand" href="{{url('admin-dashboard')}}"><img class="brand-logo" alt="Chameleon admin logo" src="theme-assets/images/logo/logo_gearpt_5.png" height="36" width="39"/>
+            <h3 class="brand-text">GearPT</h3></a></li>
           <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
         </ul>
       </div>

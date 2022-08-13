@@ -46,10 +46,20 @@
 						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
 					</ul>
+					@if (Session::has('loginID'))
+						
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+						<li><a href="#"><i class="fa fa-user-o"></i> Hello: {{Session::get('loginID')}}</a></li>
+						<li><a href="{{url('logout')}}"><i class="fa fa-user-o"></i> Logout</a></li>
 					</ul>
+						
+					@else
+						<ul class="header-links pull-right">
+							<li><a href="{{url('login')}}"><i class="fa fa-user-o"></i> Login</a></li>
+							<li><a href="{{url('register')}}"><i class="fa fa-user-o"></i> Register</a></li>
+						</ul>
+					
+					@endif
 				</div>
 			</div>
 			<!-- /TOP HEADER -->
@@ -73,13 +83,13 @@
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
+								<form action="{{url('search')}}" method="Get">
 									<select class="input-select">
 										<option value="0">All Categories</option>
 										<option value="1">Category 01</option>
 										<option value="1">Category 02</option>
 									</select>
-									<input class="input" placeholder="Search here">
+									<input class="input" name="query" placeholder="Search here">
 									<button class="search-btn">Search</button>
 								</form>
 							</div>
@@ -170,13 +180,9 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Hot Deals</a></li>
-						<li><a href="#">Categories</a></li>
-						<li><a href="#">Laptops</a></li>
-						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Cameras</a></li>
-						<li><a href="#">Accessories</a></li>
+						<li><a href="{{url('/')}}">Home</a></li>
+						<li class="active"><a href="{{url('product')}}">Product</a></li>
+						
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -194,11 +200,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">All Categories</a></li>
-							<li><a href="#">Accessories</a></li>
-							<li><a href="#">Headphones</a></li>
-							<li class="active">Product name goes here</li>
+							<li><a href="{{url('/')}}">Home</a></li>
+							<li><a href="{{url('product')}}">Product</a></li>
+							<li class="active">{{$product->productName}}</li>
 						</ul>
 					</div>
 				</div>
@@ -218,90 +222,32 @@
 					<div class="col-md-5 col-md-push-2">
 						<div id="product-main-img">
 							<div class="product-preview">
-								<img src="../img/product01.png" alt="">
+								<img src="../img/GearPT/{{$product->productImage}}" alt="">
 							</div>
 
-							<div class="product-preview">
-								<img src="../img/product03.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="../img/product06.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="../img/product08.png" alt="">
-							</div>
 						</div>
 					</div>
 					<!-- /Product main img -->
 
 					<!-- Product thumb imgs -->
 					<div class="col-md-2  col-md-pull-5">
-						<div id="product-imgs">
-							<div class="product-preview">
-								<img src="../img/product01.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="../img/product03.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="../img/product06.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="../img/product08.png" alt="">
-							</div>
-						</div>
+						
 					</div>
 					<!-- /Product thumb imgs -->
 
 					<!-- Product details -->
 					<div class="col-md-5">
 						<div class="product-details">
-							<h2 class="product-name">product name goes here</h2>
+							<h2 class="product-name">{{$product->productName}}</h2>
+							
 							<div>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o"></i>
-								</div>
-								<a class="review-link" href="#">10 Review(s) | Add your review</a>
-							</div>
-							<div>
-								<h3 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h3>
+								<h3 class="product-price">{{$product->productPrice}} <del class="product-old-price">$990.00</del></h3>
 								<span class="product-available">In Stock</span>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-							<div class="product-options">
-								<label>
-									Size
-									<select class="input-select">
-										<option value="0">X</option>
-									</select>
-								</label>
-								<label>
-									Color
-									<select class="input-select">
-										<option value="0">Red</option>
-									</select>
-								</label>
-							</div>
+							<p>{{$product->productDescription}}</p>
 
 							<div class="add-to-cart">
-								<div class="qty-label">
-									Qty
-									<div class="input-number">
-										<input type="number">
-										<span class="qty-up">+</span>
-										<span class="qty-down">-</span>
-									</div>
-								</div>
+								
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
 							</div>
 
@@ -334,8 +280,8 @@
 							<!-- product tab nav -->
 							<ul class="tab-nav">
 								<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-								<li><a data-toggle="tab" href="#tab2">Details</a></li>
-								<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
+								
+								<li><a data-toggle="tab" href="#tab3">Reviews</a></li>
 							</ul>
 							<!-- /product tab nav -->
 
@@ -345,7 +291,7 @@
 								<div id="tab1" class="tab-pane fade in active">
 									<div class="row">
 										<div class="col-md-12">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<p>{{$product->productDescription}}</p>
 										</div>
 									</div>
 								</div>
