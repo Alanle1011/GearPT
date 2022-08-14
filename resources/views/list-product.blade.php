@@ -192,17 +192,7 @@
                                     <label for="productPrice" >Product Price</label>
                                     <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" name="productPrice">
                                 </div>
-                                {{-- <div class="col">
-                                    <label for="productType" >Product Type</label>
-                                    <select class="form-control" name="productType" id="productType" >
-                                        <option value="" disabled selected>Select a Type</option>
-                                        @foreach($productTypedata as $row)
-                                        <option value="{{$row->productTypeID}}"> 
-                                            {{$row->productTypeID}} - {{$row->productTypeName}} 
-                                        </option>
-                                        @endforeach
-                                    </select>
-                                </div> --}}
+                                
                                 <div class="col">
                                     <label for="productProducer" >Product Producer</label>
                                     <select class="form-control" name="productProducer" id="productProducer">
@@ -214,6 +204,17 @@
                                         @endforeach
                                     </select>
                                 </div>  
+                                <div class="col">
+                                    <label for="productType" >Product Type</label>
+                                    <select class="form-control" name="productType" id="productType" >
+                                        <option value="" disabled selected>Select a Type</option>
+                                        @foreach($productTypedata as $row)
+                                        <option value="{{$row->productTypeID}}"> 
+                                            {{$row->productTypeID}} - {{$row->productTypeName}} 
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="col" style="margin-top: 25px">
                                     <button class="btn btn-success">Search</button>
                                     <a href="{{url('list-product')}}" class="btn btn-danger">Cancel</a> 

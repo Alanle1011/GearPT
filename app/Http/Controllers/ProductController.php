@@ -105,13 +105,13 @@ class ProductController extends Controller
         if(!empty($request->productPrice)){
             $data = Product::where('productPrice', 'LIKE', "%" . $request->productPrice . "%")->get();
         }
-        if( $request->productProducer){
+        if(!empty($request->productProducer)){
             $data = Product::where('producerID', 'LIKE', "%" . $request->productProducer . "%")->get();  
         }
-        // if( $request->min_age && $request->max_age ){
-        //     $data = $data->where('age', '>=', $request->min_age)
-        //                  ->where('age', '<=', $request->max_age);
-        // }
+        if(!empty($request->productType)){
+            $data = Product::where('productTypeID', 'LIKE', "%" . $request->productType . "%")->get();  
+        }
+        
         
         
         return view('list-product', compact('data','productTypedata','producerdata'));
