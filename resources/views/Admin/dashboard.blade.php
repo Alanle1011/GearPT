@@ -66,7 +66,8 @@
                   <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read       </a></div>
                 </div>
               </li>
-              <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><i></i></span></a>
+              <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                <span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><i></i></span></a>
                 <div class="dropdown-menu dropdown-menu-right">
                   <div class="arrow_box_right"><a class="dropdown-item" href="admin-dashboard"><span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><span class="user-name text-bold-700 ml-1">{{Session::get('adminloginName')}}</span></span></a>
                     <div class="dropdown-divider"></div><a class="dropdown-item" href="{{url('admin-logout')}}"><i class="ft-power"></i> Logout</a>
@@ -96,24 +97,31 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
           <li class="active"><a href="{{url('admin-dashboard')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
           </li>
-          <li class=" nav-item"><a href="{{url('list-admin')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Admin Tables</span></a>
+          <li class="active-toggle" class="nav-item has-sub dropdown-toggle"><a href="#"><i class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
+            <ul class="menu-content">
+                <li class=" nav-item"><a href="{{url('list-admin')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Admin</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-staff')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Staff</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-client')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Client</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-product')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Product</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-producttype')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Product type</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-producer')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Producer</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-order')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Order</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-orderdetail')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Order Detail</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-feedback')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Feedback</span></a>
+                </li>      
+            </ul>
           </li>
-          <li class=" nav-item"><a href="{{url('list-staff')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n=""> Staff Tables</span></a>
-          </li>
-          <li class=" nav-item"><a href="{{url('list-client')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Client Tables</span></a>
-          </li>
-          <li class=" nav-item"><a href="{{url('list-producttype')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Product type</span></a>
-          </li>
-          <li class=" nav-item"><a href="{{url('list-producer')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Producer</span></a>
-          </li>
-          <li class=" nav-item"><a href="{{url('list-product')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Product</span></a>
-          </li>
-          <li class=" nav-item"><a href="{{url('list-order')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Order</span></a>
-          </li>
-          <li class=" nav-item"><a href="{{url('list-orderdetail')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Order Detail</span></a>
-          </li>
-          <li class=" nav-item"><a href="{{url('list-feedback   ')}}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Feedback</span></a>
-          </li>
+
+
+
 
         </ul>
       </div>
