@@ -94,6 +94,7 @@ Route::post('save-product',[ProductController::class,'saveProduct'])->middleware
 Route::get('edit-product/{id}',[ProductController::class,'editProduct'])->middleware('isLogin');
 Route::post('update-product',[ProductController::class,'updateProduct'])->middleware('isLogin');
 Route::get('delete-product/{id}',[ProductController::class,'deleteProduct'])->middleware('isLogin');
+Route::post('product-advancesearch', [ProductController::class,'advanceSearch']);
 
 // Product Type:
 Route::get('list-producttype',[ProductTypeController::class,'index'])->middleware('isLogin');

@@ -133,7 +133,7 @@
         </div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="active"><a href="{{ url('admin-dashboard') }}"><i class="ft-home"></i><span
+                <li class="nav-item"><a href="{{ url('admin-dashboard') }}"><i class="ft-home"></i><span
                             class="menu-title" data-i18n="">Dashboard</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ url('list-admin') }}"><i class="ft-credit-card"></i><span
@@ -151,7 +151,7 @@
                 <li class=" nav-item"><a href="{{ url('list-producer') }}"><i class="ft-credit-card"></i><span
                             class="menu-title" data-i18n="">Producer</span></a>
                 </li>
-                <li class=" nav-item"><a href="{{ url('list-product') }}"><i class="ft-credit-card"></i><span
+                <li class=" active"><a href="{{ url('list-product') }}"><i class="ft-credit-card"></i><span
                             class="menu-title" data-i18n="">Product</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ url('list-order') }}"><i class="ft-credit-card"></i><span
@@ -171,7 +171,7 @@
 
     <div class="app-content content">
         <div class="content-wrapper">
-           
+            
             <div class="row">
                 <div class="col-md-12">
                     @if(Session::has('success'))
@@ -180,7 +180,49 @@
                     </div>
                 @endif
                     <h2>Product List</h2>
-                    
+                    <div class="container">
+                        <form action="{{url('product-advancesearch')}}" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col">
+                                    <label for="productName" >Product Name</label>
+                                    <input type="text" class="form-control" id="productName" placeholder="Enter product name"  name="productName">
+                                </div>
+                                <div class="col">
+                                    <label for="productPrice" >Product Price</label>
+                                    <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" name="productPrice">
+                                </div>
+                                {{-- <div class="col">
+                                    <label for="productType" >Product Type</label>
+                                    <select class="form-control" name="productType" id="productType" >
+                                        <option value="" disabled selected>Select a Type</option>
+                                        @foreach($productTypedata as $row)
+                                        <option value="{{$row->productTypeID}}"> 
+                                            {{$row->productTypeID}} - {{$row->productTypeName}} 
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div> --}}
+                                <div class="col">
+                                    <label for="productProducer" >Product Producer</label>
+                                    <select class="form-control" name="productProducer" id="productProducer">
+                                        <option value="" disabled selected>Select a Type</option>
+                                        @foreach($producerdata as $row)
+                                        <option value="{{$row->producerID}}"> 
+                                            {{$row->producerID}} - {{$row->producerName}}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>  
+                                <div class="col" style="margin-top: 25px">
+                                    <button class="btn btn-success">Search</button>
+                                    <a href="{{url('list-product')}}" class="btn btn-danger">Cancel</a> 
+                                </div>
+                                
+                                  
+                            </div>
+                        </form>
+                      </div>
                     <div>
                         <a href="{{url('add-product')}}" class="btn btn-dark" style="float: right; margin-right: 20px;"  >Add</a>
                     </div>
@@ -219,7 +261,6 @@
                     </table>
                     
                 </div>
-    
             </div>
             
         

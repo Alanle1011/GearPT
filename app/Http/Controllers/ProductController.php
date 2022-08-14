@@ -6,24 +6,22 @@ use App\Models\Producer;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductType;
+use Hamcrest\Core\HasToString;
 use Illuminate\Support\Facades\DB;
 use function GuzzleHttp\Promise\all;
 
 class ProductController extends Controller
 {
     public function index(){
-        // $data = Product::get();
-        
-
-        // return view('test', compact('data'));
-
+        $productTypedata = ProductType::get();
+        $producerdata =Producer::get();
         $data = DB::table('products')
         ->join('product_types','product_types.productTypeID','products.productTypeID')
         ->join('producers','producers.producerID','products.producerID')
         ->select('products.*','product_types.productTypeName','producers.producerName')
-        ->get();
+        ->paginate(15);
 
-        return view('list-product', compact('data'));
+        return view('list-product', compact('data','productTypedata','producerdata'));
     }
     public function addProduct(){
         $productTypedata = ProductType::get();
@@ -91,29 +89,32 @@ class ProductController extends Controller
         return redirect()->back()->with('success','Product Deleted Successfully');
     }
 
-    public function simpleSeacrh(Request $request)
-    {
-        $data = DB::table('people');
-        if( $request->input('search')){
-            $data = $data->where('name', 'LIKE', "%" . $request->search . "%");
-        }
-        $data = $data->paginate(10);
-        return view('search', compact('data'));
-    }
     public function advanceSearch(Request $request)
     {
-        $data = DB::table('people');
-        if( $request->name){
-            $data = $data->where('name', 'LIKE', "%" . $request->name . "%");
+        $productTypedata = ProductType::get();
+        $producerdata =Producer::get();
+        $data = DB::table('products')
+        ->join('product_types','product_types.productTypeID','products.productTypeID')
+        ->join('producers','producers.producerID','products.producerID')
+        ->select('products.*','product_types.productTypeName','producers.producerName')
+        ->get();
+        
+        if(!empty($request->productName)){
+            $data = Product::where('productName', 'LIKE', "%" . $request->productName . "%")->get();
         }
-        if( $request->address){
-            $data = $data->where('address', 'LIKE', "%" . $request->address . "%");
+        if(!empty($request->productPrice)){
+            $data = Product::where('productPrice', 'LIKE', "%" . $request->productPrice . "%")->get();
         }
-        if( $request->min_age && $request->max_age ){
-            $data = $data->where('age', '>=', $request->min_age)
-                         ->where('age', '<=', $request->max_age);
+        if( $request->productProducer){
+            $data = Product::where('producerID', 'LIKE', "%" . $request->productProducer . "%")->get();  
         }
-        $data = $data->paginate(10);
-        return view('search', compact('data'));
+        // if( $request->min_age && $request->max_age ){
+        //     $data = $data->where('age', '>=', $request->min_age)
+        //                  ->where('age', '<=', $request->max_age);
+        // }
+        
+        
+        return view('list-product', compact('data','productTypedata','producerdata'));
+        
     }
 }
