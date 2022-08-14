@@ -12,7 +12,7 @@
     
     <title>Product Type Addition Page</title>
 </head>
-<body>
+<body class="img js-fullheight" style="background-image: url(../img/Background/bg.jpg);">
     <div class="container mt-3" >
         <h2>Product Type Addition</h2>
         @if(Session::has('success'))

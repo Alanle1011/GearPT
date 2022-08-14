@@ -12,7 +12,7 @@
     
     <title>Product Editing Page</title>
 </head>
-<body>
+<body class="img js-fullheight" style="background-image: url(../img/Background/bg.jpg);">
     <div class="container mt-3" >
         <h2>Product Editing</h2>
         @if(Session::has('success'))

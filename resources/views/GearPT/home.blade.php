@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>GearPT</title>
+		<title>GEARPT - Prof. & Tech.</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -44,11 +44,21 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +00-0000-0000</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 20 Cong Hoa Street</a></li>
+						<li><a><i class="fa fa-phone"></i> +84-1900-1112</a></li>
+						<li><a><i class="fa fa-envelope-o"></i> contact@gearpt.com</a></li>
+						<li><a><i class="fa fa-map-marker"></i> 20 Cong Hoa Street, HCMC.</a></li>
+						{{-- <li><span class="flag-icon flag-icon-vn"></span></li> --}}
+						
+						{{-- <li class="dropdown dropdown-language nav-item"><a><i class="flag-icon flag-icon-us"></i><span class="selected-language"></span></a>						<li><span class="flag-icon flag-icon-vn"></span></li> --}}
 					</ul>
-
+					{{-- <ul class="nav navbar-nav float-right">         
+						<li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language"></span></a>
+						  <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+							<div class="arrow_box"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i> Russian</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i> Spanish</a></div>
+						  </div>
+						</li>
+					</ul> --}}
+		  
 					@if (Session::has('loginID'))
 						
 					<ul class="header-links pull-right">
@@ -78,7 +88,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="{{url('/')}}" class="logo">
-									<img src="./img/logo/logo_gearpt_10.png" alt="">
+									<img src="./img/Logo/logo_gearpt_10.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -382,7 +392,7 @@
 							</form>
 							<ul class="newsletter-follow">
 								<li>
-									<a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+									<a href="https://www.facebook.com/profile"><i class="fa fa-facebook"></i></a>
 									
 								</li>
 								<li>
@@ -415,11 +425,11 @@
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
 								<h3 class="footer-title">About Us</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+								<p>GearPT - "We sell electronic devices."</p>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+									<li><a href="#"><i class="fa fa-map-marker"></i>20 Cong Hoa Street, HCMC.</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>+84-1900-1112</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>contact@gearpt.com</a></li>
 								</ul>
 							</div>
 						</div>
@@ -487,8 +497,8 @@
 							</ul>
 							<span class="copyright">
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> GearPT, Inc. All rights reserved.
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							</span>
 						</div>
 					</div>
