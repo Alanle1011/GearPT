@@ -9,8 +9,8 @@
     <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>Dashboard - GEARPT</title>
-    <link rel="apple-touch-icon" href="theme-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="theme-assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="img/Logo/2.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/Logo/2.png">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
@@ -68,7 +68,7 @@
               </li>
               <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">             <span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><i></i></span></a>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <div class="arrow_box_right"><a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><span class="user-name text-bold-700 ml-1">{{Session::get('adminloginName')}}</span></span></a>
+                  <div class="arrow_box_right"><a class="dropdown-item" href="admin-dashboard"><span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><span class="user-name text-bold-700 ml-1">{{Session::get('adminloginName')}}</span></span></a>
                     <div class="dropdown-divider"></div><a class="dropdown-item" href="{{url('admin-logout')}}"><i class="ft-power"></i> Logout</a>
                   </div>
                 </div>
@@ -86,8 +86,9 @@
       <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">       
 
-          <li class="nav-item mr-auto"><a class="navbar-brand" href="{{url('admin-dashboard')}}"><img class="brand-logo" alt="Chameleon admin logo" src="theme-assets/images/logo/logo_gearpt_5.png" height="36" width="39"/>
-            <h3 class="brand-text">GearPT</h3></a></li>
+          <li class="nav-item mr-auto"><a href="{{url('admin-dashboard')}}"><img 
+                        class="logo" alt="Chameleon admin logo" 
+                        src="img/Logo/3.png" height="74" width="170"/>
           <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
         </ul>
       </div>
