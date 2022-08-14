@@ -817,7 +817,7 @@
 
 					<!-- STORE -->
 					<div id="store" class="col-md-9">
-						s	
+						
 						<!-- store products -->
 						<div class="row">
 							@foreach ($data as $row )
@@ -826,7 +826,7 @@
 								<div class="col-md-3">
 									<div class="product">
 										<div class="product-img">
-											<img src="img/GearPT/{{$row->productImage}}" height="300" width="300" alt="">
+											<img src="img/GearPT/{{$row->productImage}}" height="200" width="300" alt="">
 										</div>
 										<div class="product-body">
 											<p class="product-category">{{$row->productTypeName}}</p>
