@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
   <head>
@@ -56,7 +55,12 @@
             <ul class="nav navbar-nav float-right">
               <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-vn"></i><span class="selected-language"></span></a>
                 <div class="dropdown-menu" aria-labelledby="dropdown-flag">
-                  <div class="arrow_box"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i> Russian</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i> Spanish</a></div>
+                    <div class="arrow_box">
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i> Русский</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> Français</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i> Español</a>
+                    </div>
                 </div>
               </li>
             </ul>
@@ -69,9 +73,17 @@
               <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
                 <span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><i></i></span></a>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <div class="arrow_box_right"><a class="dropdown-item" href="admin-dashboard"><span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><span class="user-name text-bold-700 ml-1">{{Session::get('adminloginName')}}</span></span></a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item" href="{{url('admin-logout')}}"><i class="ft-power"></i> Logout</a>
-                  </div>
+                    <div class="arrow_box_right">
+                        <a class="dropdown-item" href="admin-dashboard"><span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><span class="user-name text-bold-700 ml-1">{{Session::get('adminloginName')}}</span></span></a>
+                        
+                        <div class="dropdown-divider"></div>
+                        
+                        <a class="dropdown-item" href="{{url('/')}}"><i class="ft-link"></i> Website</a>
+                        
+                        <div class="dropdown-divider"></div>
+                        
+                        <a class="dropdown-item" href="{{url('admin-logout')}}"><i class="ft-power"></i> Logout</a>
+                    </div>
                 </div>
               </li>
             </ul>
@@ -83,10 +95,10 @@
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
 
-    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="theme-assets/images/backgrounds/02.jpg">
-      <div class="navbar-header">
-        <ul class="nav navbar-nav flex-row">       
-
+    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" 
+        data-img="theme-assets/images/backgrounds/02.jpg">
+        <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
           <li class="nav-item mr-auto"><a href="{{url('admin-dashboard')}}"><img 
                         class="logo" alt="Chameleon admin logo" 
                         src="img/Logo/3.png" height="74" width="170"/>
@@ -95,9 +107,9 @@
       </div>
       <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-          <li class="active"><a href="{{url('admin-dashboard')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+          <li class="active-toggle"><a href="{{url('admin-dashboard')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
           </li>
-          <li class="active-toggle" class="nav-item has-sub dropdown-toggle"><a href="#"><i class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
+          <li class="active-toggle" class="nav-item has-sub dropdown"><a href="#"><i class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
             <ul class="menu-content">
                 <li class=" nav-item"><a href="{{url('list-admin')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Admin</span></a>
                 </li>
@@ -116,7 +128,7 @@
                 <li class=" nav-item"><a href="{{url('list-orderdetail')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Order Detail</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{url('list-feedback')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Feedback</span></a>
-                </li>      
+                </li>
             </ul>
           </li>
 
@@ -431,12 +443,10 @@
 
 
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
-      <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span class="float-md-left d-block d-md-inline-block">2018  &copy; Copyright <a class="text-bold-800 grey darken-2" href="https://themeselection.com" target="_blank">ThemeSelection</a></span>
-        <ul class="list-inline float-md-right d-block d-md-inline-blockd-none d-lg-block mb-0">
-          <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/" target="_blank"> More themes</a></li>
-          <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/support" target="_blank"> Support</a></li>
-          <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/products/chameleon-admin-modern-bootstrap-webapp-dashboard-html-template-ui-kit/" target="_blank"> Purchase</a></li>
-        </ul>
+      <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+        <span class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            GearPT, Inc. All rights reserved.
+        </span>
       </div>
     </footer>
 

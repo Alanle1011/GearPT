@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 
@@ -12,8 +11,8 @@
         content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>Dashboard - GEARPT</title>
-    <link rel="apple-touch-icon" href="theme-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="theme-assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="img/Logo/2.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/Logo/2.png">
     <link
         href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700"
         rel="stylesheet">
@@ -38,131 +37,107 @@
     data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
 
     <!-- fixed-top-->
-    <nav
-        class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
-        <div class="navbar-wrapper">
-            <div class="navbar-container content">
-                <div class="collapse navbar-collapse show" id="navbar-mobile">
-                    <ul class="nav navbar-nav mr-auto float-left">
-                        <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs"
-                                href="#"><i class="ft-menu"></i></a></li>
-                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i
-                                    class="ficon ft-maximize"></i></a></li>
-                        <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide"
-                                data-toggle="dropdown" href="#"><i class="ficon ft-search"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="arrow_box">
-                                    <form>
-                                        <div class="input-group search-box">
-                                            <div class="position-relative has-icon-right full-width">
-                                                <input class="form-control" id="search" type="text"
-                                                    placeholder="Search here...">
-                                                <div class="form-control-position navbar-search-close"><i
-                                                        class="ft-x"> </i></div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link"
-                                id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span
-                                    class="selected-language"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown-flag">
-                                <div class="arrow_box"><a class="dropdown-item" href="#"><i
-                                            class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item"
-                                        href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a><a
-                                        class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i>
-                                        Russian</a><a class="dropdown-item" href="#"><i
-                                            class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item"
-                                        href="#"><i class="flag-icon flag-icon-es"></i> Spanish</a></div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav float-right">
-                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label"
-                                href="#" data-toggle="dropdown"><i class="ficon ft-mail"> </i></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i
-                                            class="ft-book"></i> Read Mail</a><a class="dropdown-item"
-                                        href="#"><i class="ft-bookmark"></i> Read Later</a><a
-                                        class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all
-                                        Read </a></div>
-                            </div>
-                        </li>
-                        <li class="dropdown dropdown-user nav-item"><a
-                                class="dropdown-toggle nav-link dropdown-user-link" href="#"
-                                data-toggle="dropdown"> <span class="avatar avatar-online"><img
-                                        src="img/GearPT/{{ Session::get('adminloginImage') }}"
-                                        alt="avatar"><i></i></span></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><span
-                                            class="avatar avatar-online"><img
-                                                src="img/GearPT/{{ Session::get('adminloginImage') }}"
-                                                alt="avatar"><span
-                                                class="user-name text-bold-700 ml-1">{{ Session::get('adminloginName') }}</span></span></a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item"
-                                        href="{{ url('admin-logout') }}"><i class="ft-power"></i> Logout</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
+      <div class="navbar-wrapper">
+        <div class="navbar-container content">
+          <div class="collapse navbar-collapse show" id="navbar-mobile">
+            <ul class="nav navbar-nav mr-auto float-left">
+              <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
+              <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
+              <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide" data-toggle="dropdown" href="#"><i class="ficon ft-search"></i></a>
+                <ul class="dropdown-menu">
+                  <li class="arrow_box">
+                    <form>
+                      <div class="input-group search-box">
+                        <div class="position-relative has-icon-right full-width">
+                          <input class="form-control" id="search" type="text" placeholder="Search here...">
+                          <div class="form-control-position navbar-search-close"><i class="ft-x">   </i></div>
+                        </div>
+                      </div>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav float-right">
+              <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-vn"></i><span class="selected-language"></span></a>
+                <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                    <div class="arrow_box">
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i> Русский</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> Français</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i> Español</a>
+                    </div>
                 </div>
-            </div>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav float-right">
+              <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read       </a></div>
+                </div>
+              </li>
+              <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                <span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><i></i></span></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="arrow_box_right">
+                        <a class="dropdown-item" href="admin-dashboard"><span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><span class="user-name text-bold-700 ml-1">{{Session::get('adminloginName')}}</span></span></a>
+                        
+                        <div class="dropdown-divider"></div>
+                        
+                        <a class="dropdown-item" href="{{url('/')}}"><i class="ft-link"></i> Website</a>
+                        
+                        <div class="dropdown-divider"></div>
+                        
+                        <a class="dropdown-item" href="{{url('admin-logout')}}"><i class="ft-power"></i> Logout</a>
+                    </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
 
-    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true"
+    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" 
         data-img="theme-assets/images/backgrounds/02.jpg">
         <div class="navbar-header">
-            <ul class="nav navbar-nav flex-row">
-
-                <li class="nav-item mr-auto"><a class="navbar-brand" href="{{ url('admin-dashboard') }}"><img
-                            class="brand-logo" alt="Chameleon admin logo"
-                            src="theme-assets/images/logo/logo_gearpt_5.png" height="36" width="39" />
-                        <h3 class="brand-text">GearPT</h3>
-                    </a></li>
-                <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
+        <ul class="nav navbar-nav flex-row">
+          <li class="nav-item mr-auto"><a href="{{url('admin-dashboard')}}"><img 
+                        class="logo" alt="Chameleon admin logo" 
+                        src="img/Logo/3.png" height="74" width="170"/>
+          <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
+        </ul>
+      </div>
+      <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+          <li class="active-toggle"><a href="{{url('admin-dashboard')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+          </li>
+          <li class="active-toggle" class="nav-item has-sub dropdown"><a href="#"><i class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
+            <ul class="menu-content">
+                <li class=" nav-item"><a href="{{url('list-admin')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Admin</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-staff')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Staff</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-client')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Client</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-product')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Product</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-producttype')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Product type</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-producer')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Producer</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-order')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Order</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-orderdetail')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Order Detail</span></a>
+                </li>
+                <li class=" nav-item"><a href="{{url('list-feedback')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Feedback</span></a>
+                </li>
             </ul>
-        </div>
-        <div class="main-menu-content">
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="active"><a href="{{ url('admin-dashboard') }}"><i class="ft-home"></i><span
-                            class="menu-title" data-i18n="">Dashboard</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-admin') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n="">Admin Tables</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-staff') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n=""> Staff Tables</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-client') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n="">Client Tables</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-producttype') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n="">Product type</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-producer') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n="">Producer</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-product') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n="">Product</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-order') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n="">Order</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-orderdetail') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n="">Order Detail</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{ url('list-feedback   ') }}"><i class="ft-credit-card"></i><span
-                            class="menu-title" data-i18n="">Feedback</span></a>
-                </li>
+          </li>
 
             </ul>
         </div>
@@ -178,9 +153,12 @@
                         <div class="alert alert-success" role="alert">
                             {{Session::get('success')}}
                         </div>
-                    @endif
-                        <h2>Producer List</h2>
+                        @endif
                         
+                        <br><br>
+                        <h2>Producer List</h2>
+                        <br><br>
+
                         <div>
                             <a href="{{url('add-producer')}}" class="btn btn-dark" style="float: right; margin-right: 20px;"  >Add</a>
                         </div>
@@ -225,21 +203,13 @@
 
 
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
-        <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
-                class="float-md-left d-block d-md-inline-block">2018 &copy; Copyright <a
-                    class="text-bold-800 grey darken-2" href="https://themeselection.com"
-                    target="_blank">ThemeSelection</a></span>
-            <ul class="list-inline float-md-right d-block d-md-inline-blockd-none d-lg-block mb-0">
-                <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/" target="_blank">
-                        More themes</a></li>
-                <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/support"
-                        target="_blank"> Support</a></li>
-                <li class="list-inline-item"><a class="my-1"
-                        href="https://themeselection.com/products/chameleon-admin-modern-bootstrap-webapp-dashboard-html-template-ui-kit/"
-                        target="_blank"> Purchase</a></li>
-            </ul>
-        </div>
+      <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+        <span class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            GearPT, Inc. All rights reserved.
+        </span>
+      </div>
     </footer>
+
 
     <!-- BEGIN VENDOR JS-->
     <script src="theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>

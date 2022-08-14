@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,7 +7,9 @@
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 		<title>GEARPT - Prof. & Tech.</title>
-
+		<link rel="apple-touch-icon" href="img/Logo/2.png">
+		<link rel="shortcut icon" type="image/x-icon" href="img/Logo/2.png">
+	
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
@@ -427,9 +427,9 @@
 								<h3 class="footer-title">About Us</h3>
 								<p>GearPT - "We sell electronic devices."</p>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>20 Cong Hoa Street, HCMC.</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>+84-1900-1112</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>contact@gearpt.com</a></li>
+									<li><a><i class="fa fa-map-marker"></i>20 Cong Hoa Street, HCMC.</a></li>
+									<li><a><i class="fa fa-phone"></i>+84-1900-1112</a></li>
+									<li><a><i class="fa fa-envelope-o"></i>contact@gearpt.com</a></li>
 								</ul>
 							</div>
 						</div>
@@ -495,10 +495,8 @@
 								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
 								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
 							</ul>
-							<span class="copyright">
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> GearPT, Inc. All rights reserved.
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							<span class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+								GearPT, Inc. All rights reserved.
 							</span>
 						</div>
 					</div>
