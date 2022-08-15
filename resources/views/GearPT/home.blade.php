@@ -332,6 +332,7 @@
 										@foreach ($data as $row )
 										<!-- product -->
 										<div class="col-md-3">
+											<a href="productDetail/{{$row->productID}}">
 											<div class="product">
 												<div class="product-img">
 													<img src="./img/GearPT/{{$row->productImage}}" height="250px" width="250px" alt="">
@@ -357,6 +358,7 @@
 													<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
 												</div>
 											</div>
+											</a>
 										</div>
 										<!-- /product -->
 										@endforeach	

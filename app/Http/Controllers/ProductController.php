@@ -6,9 +6,8 @@ use App\Models\Producer;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductType;
-use Hamcrest\Core\HasToString;
 use Illuminate\Support\Facades\DB;
-use function GuzzleHttp\Promise\all;
+
 
 class ProductController extends Controller
 {
