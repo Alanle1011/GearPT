@@ -76,7 +76,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="{{url('/')}}" class="logo">
-									<img src="./img/Logo/logo_gearpt.png" alt="">
+									<img src="../img/Logo/logo_gearpt.png" alt="">
 								</a>
 							</div>
 						</div>
