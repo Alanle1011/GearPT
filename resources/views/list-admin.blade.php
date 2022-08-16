@@ -181,7 +181,11 @@
                                         <td>{{ $row->adminPhone }}</td>
                                         <td>{{ $row->adminAddress }}</td>
                                         <td>{{ $row->adminUsername }}</td>
-                                        <td>{{ $row->adminPassword }}</td>
+                                        <td>
+                                          <div style="width: 20px">
+                                            {{ $row->adminPassword }}
+                                          </div>
+                                        </td>
                                         <td>{{ $row->adminImage }}</td>
                                         <td>
                                             <a href="{{ url('edit-admin/' . $row->adminID) }}" class="btn btn-primary">Edit</a>

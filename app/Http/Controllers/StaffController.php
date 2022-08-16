@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash ;
 use App\Models\Staff;
 
 class StaffController extends Controller
@@ -35,7 +36,7 @@ class StaffController extends Controller
         $staffPhone = $request->staffPhone;
         $staffAddress= $request->staffAddress;
         $staffUsername = $request->staffUsername;
-        $staffPassword = $request->staffPassword;
+        $staffPassword = Hash::make($request->staffPassword);
         $staffImage= $request->file('staffImage')->getClientOriginalName();
         
         //move Upladed file

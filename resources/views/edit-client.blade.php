@@ -58,7 +58,7 @@
 
             <div class="mb-3" >
                 <label for="clientPassword" >Password</label>
-                <input type="text" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" value="{{$data->clientPassword}}" required>
+                <input type="password" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" value="{{$data->clientPassword}}" required>
                 @error('clientPassword')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}

@@ -37,7 +37,7 @@ class ClientController extends Controller
         $clientName = $request->clientName;
         $clientPhone = $request->clientPhone;
         $clientAddress= $request->clientAddress;
-        $clientUsername = $request->clientUsername;
+        $clientUsername = Hash::make($request->clientUsername);
         $clientPassword = $request->clientPassword;
         $clientImage= $request->file('clientImage')->getClientOriginalName();
         

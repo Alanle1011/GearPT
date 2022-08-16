@@ -183,7 +183,13 @@
                                 <td>{{$row->clientPhone}}</td>
                                 <td>{{$row->clientAddress}}</td>
                                 <td>{{$row->clientUsername}}</td>
-                                <td>{{$row->clientPassword}}</td>
+
+                                <td>
+                                  <div style="word-wrap:break-word">
+                                    {{$row->clientPassword}}
+                                  </div>
+                                 
+                                </td>
                                 <td><img src="img/GearPT/{{$row->clientImage}}" width="100px" height="100px" alt=""></td>
                                 <td>
                                   <a href="{{url('edit-client/'.$row->clientID)}}" class="btn btn-primary">Edit</a>
