@@ -46,9 +46,9 @@
         <div id="top-header">
             <div class="container">
                 <ul class="header-links pull-left">
-                    <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                    <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-                    <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+                    <li><a><i class="fa fa-phone"></i> +84-1900-1112</a></li>
+                    <li><a><i class="fa fa-envelope-o"></i> contact@gearpt.com</a></li>
+                    <li><a><i class="fa fa-map-marker"></i> 20 Cong Hoa Street, HCMC.</a></li>
                 </ul>
                 
             </div>

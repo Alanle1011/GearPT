@@ -467,23 +467,24 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+						<li><a><i class="fa fa-phone"></i> +84-1900-1112</a></li>
+						<li><a><i class="fa fa-envelope-o"></i> contact@gearpt.com</a></li>
+						<li><a><i class="fa fa-map-marker"></i> 20 Cong Hoa Street, HCMC.</a></li>
 					</ul>
+					
 					@if (Session::has('loginID'))
 						
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-user-o"></i> Hello: {{Session::get('loginID')}}</a></li>
-						<li><a href="{{url('logout')}}"><i class="fa fa-user-o"></i> Logout</a></li>
+						<li><a href="{{url('profile')}}"><i class="fa fa-user-o"></i> {{Session::get('loginID')}}</a></li>
+						<li><a href="{{url('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
 					</ul>
 						
 					@else
 						<ul class="header-links pull-right">
-							<li><a href="{{url('login')}}"><i class="fa fa-user-o"></i> Login</a></li>
-							<li><a href="{{url('register')}}"><i class="fa fa-user-o"></i> Register</a></li>
+							<li><a href="{{url('register')}}"><i class="fa fa-user-plus"></i> Register</a></li>
+							<li><a href="{{url('login')}}"><i class="fa fa-sign-in"></i> Login</a></li>
 						</ul>
-					
+
 					@endif
 				</div>
 			</div>
