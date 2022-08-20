@@ -118,6 +118,8 @@ Route::get('delete-staff/{id}',[StaffController::class,'deleteStaff'])->middlewa
 Route::get('/',[HomeController::class,'index']);
 Route::get('product',[HomeProductController::class,'index']);
 Route::get('productDetail/{id}',[HomeProductController::class,'productDetail']);
+Route::post('home-advancesearch',[HomeProductController::class,'homeAdvanceSearch']);
+
 Route::get('search',[HomeProductController::class,'search']);
 Route::get('register',[ClientController::class,'register']);
 Route::post('register-process',[ClientController::class,'registerProcess']);

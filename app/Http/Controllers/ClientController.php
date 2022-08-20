@@ -108,6 +108,8 @@ class ClientController extends Controller
         }else{
             return back()->with('fail','You have fail, please try again');
         }
+
+        
     }
 
     public function login(){

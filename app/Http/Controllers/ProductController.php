@@ -98,17 +98,13 @@ class ProductController extends Controller
         ->select('products.*','product_types.productTypeName','producers.producerName')
         ->get();
         
-        if(!empty($request->productName)){
-            $data = Product::where('productName', 'LIKE', "%" . $request->productName . "%")->get();
-        }
-        if(!empty($request->productPrice)){
-            $data = Product::where('productPrice', 'LIKE', "%" . $request->productPrice . "%")->get();
-        }
+        
         if(!empty($request->productProducer)){
             $data = Product::where('producerID', 'LIKE', "%" . $request->productProducer . "%")->get();  
         }
         if(!empty($request->productType)){
-            $data = Product::where('productTypeID', 'LIKE', "%" . $request->productType . "%")->get();  
+            $data = Product::where('productTypeID', 'LIKE', "%" . $request->productType . "%")->get(); 
+             
         }
         
         

@@ -640,18 +640,36 @@
 						<!-- aside Widget -->
 						<div class="aside">
 							<h3 class="aside-title">Product Type</h3>
-							<div class="checkbox-filter">
-								@foreach ($productTypedata as $type)
-								<div>
-									<input type="checkbox" wire::model="typeInputs" value="{{$type->productTypeID}}">
-									<label>
-										<span></span>
-										{{$type->productTypeName}}
-										
-									</label>
-								</div>
-								@endforeach
-							</div>
+							<form action="{{url('home-advancesearch')}}" method="POST">
+								@csrf
+								<div class="col">
+                                    <label for="productProducer" >Product Producer</label>
+                                    <select class="form-control" name="productProducer" id="productProducer">
+                                        <option value="" disabled selected>Select a Type</option>
+                                        @foreach($producerdata as $row)
+                                        <option value="{{$row->producerID}}"> 
+                                            {{$row->producerID}} - {{$row->producerName}}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>  
+                                <div class="col">
+                                    <label for="productType" >Product Type</label>
+                                    <select class="form-control" name="productType" id="productType" >
+                                        <option value="" disabled selected>Select a Type</option>
+                                        @foreach($productTypedata as $row)
+                                        <option value="{{$row->productTypeID}}"> 
+                                            {{$row->productTypeID}} - {{$row->productTypeName}} 
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col" style="margin-top: 25px">
+                                    <button type="submit" class="btn btn-success">Search</button>
+                                    <a href="{{url('product')}}" class="btn btn-danger">Cancel</a> 
+                                </div>
+							
+							</form>
 						</div>
 						<!-- /aside Widget -->
 
@@ -674,25 +692,6 @@
 							</div>
 						</div>
 						<!-- /aside Widget -->
-
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Brand</h3>
-							<div class="checkbox-filter">
-								@foreach ($producerdata as $producer)
-								<div>
-									<input type="checkbox" wire::model="typeInputs" value="{{$producer->producerID}}">
-									<label>
-										<span></span>
-										{{$producer->producerName}}
-										
-									</label>
-								</div>
-								@endforeach
-							</div>
-						</div>
-						<!-- /aside Widget -->
-
 						
 					</div>
 					<!-- /ASIDE -->
