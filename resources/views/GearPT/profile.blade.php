@@ -1,4 +1,4 @@
-+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -6,28 +6,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>PROFILE - GEARPT</title>
+		<title>Profile - GEARPT</title>
 		<link rel="apple-touch-icon" href="img/Logo/2.png">
 		<link rel="shortcut icon" type="image/x-icon" href="img/Logo/2.png">
 	
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+ 		<!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
-		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
-		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
 
-		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
 
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" href="css/font-awesome.min.css">
 
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,23 +47,27 @@
 						<li><a><i class="fa fa-phone"></i> +84-1900-1112</a></li>
 						<li><a><i class="fa fa-envelope-o"></i> contact@gearpt.com</a></li>
 						<li><a><i class="fa fa-map-marker"></i> 20 Cong Hoa Street, HCMC.</a></li>
-						{{-- <li><span class="flag-icon flag-icon-vn"></span></li> --}}
-						
-						{{-- <li class="dropdown dropdown-language nav-item"><a><i class="flag-icon flag-icon-us"></i><span class="selected-language"></span></a>						<li><span class="flag-icon flag-icon-vn"></span></li> --}}
 					</ul>
-					{{-- <ul class="nav navbar-nav float-right">         
-						<li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span class="selected-language"></span></a>
-						  <div class="dropdown-menu" aria-labelledby="dropdown-flag">
-							<div class="arrow_box"><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-us"></i> English</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> Chinese</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i> Russian</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i> Spanish</a></div>
-						  </div>
-						</li>
-					</ul> --}}
-		  
+
+					<ul class="header-links pull-right">
+						<li><a href="{{url('profile')}}"><i class="fa fa-user-o"></i> Client1</a></li>
+						<li><a href="{{url('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
+					</ul>
+					
+					{{-- @if (Session::has('loginID'))
+						
 					<ul class="header-links pull-right">
 						<li><a href="{{url('profile')}}"><i class="fa fa-user-o"></i> {{Session::get('loginID')}}</a></li>
 						<li><a href="{{url('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
 					</ul>
+						
+					@else
+						<ul class="header-links pull-right">
+							<li><a href="{{url('register')}}"><i class="fa fa-user-plus"></i> Register</a></li>
+							<li><a href="{{url('login')}}"><i class="fa fa-sign-in"></i> Login</a></li>
+						</ul>
 
+					@endif --}}
 				</div>
 			</div>
 			<!-- /TOP HEADER -->
@@ -83,6 +87,22 @@
 							</div>
 						</div>
 						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form action="{{url('search')}}" method="Get">
+									<select class="input-select">
+										<option value="0">All Categories</option>
+										<option value="1">Category 01</option>
+										<option value="1">Category 02</option>
+									</select>
+									<input class="input" name="query" placeholder="Search here">
+									<button class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
 
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
@@ -168,8 +188,9 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="{{url('/')}}">Home</a></li>
+						<li><a href="{{url('/')}}">Home</a></li>
 						<li><a href="{{url('product')}}">Product</a></li>
+						
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -179,77 +200,145 @@
 		</nav>
 		<!-- /NAVIGATION -->
 
-        <body class="img js-fullheight" style="background-image: url(../img/Background/bg.jpg);">
-            <div class="container mt-3" >
-                <h2>Client Profile</h2>
-                @if(Session::has('success'))
-                <div class="alert alert-success" role="alert">
-                    {{Session::get('success')}}
-                </div>
-                @endif
-                <form action="{{url('save-client')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
-                    @csrf
-        
-                    <div class="mb-3">
-                        <label for="clientName" >Full name</label>
-                        <input type="text" class="form-control" id="clientName" placeholder="Enter client name" name="clientName" require>
-                        @error('clientName')
-                            <div class="alert alert-danger" role="alert">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                
-                    <div class="mb-3">
-                        <label for="clientPhone" >Phone</label>
-                        <input type="number" class="form-control" id="clientPhone" placeholder="Enter client price" name="clientPhone" require>
-                        @error('clientPhone')
-                            <div class="alert alert-danger" role="alert">
-                                {{$message}}
-                            </div>
-                         @enderror
-                    </div>
-        
-                    <div class="mb-3" >
-                        <label for="clientAddress" >Address</label>
-                        <input type="number" class="form-control" id="clientAddress" placeholder="Enter client address" name="clientAddress" require>
-                        @error('clientAddress')
-                            <div class="alert alert-danger" role="alert">
-                                {{$message}}
-                            </div>
-                         @enderror
-                    </div>
-                    
-                    <div class="mb-3" >
-                        <label for="clientUsername" >Username</label>
-                        <input type="text" class="form-control" id="clientUsername" placeholder="Enter client username" name="clientUsername" require>
-                        @error('clientUsername')
-                            <div class="alert alert-danger" role="alert">
-                                {{$message}}
-                            </div>
-                         @enderror
-                    </div>
-        
-                    <div class="mb-3" >
-                        <label for="clientPassword" >Password</label>
-                        <input type="text" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" require>
-                        @error('clientPassword')
-                            <div class="alert alert-danger" role="alert">
-                                {{$message}}
-                            </div>
-                         @enderror
-                    </div>
-                    
-                    <div class="mb-3" >
-                        <label for="clientImage" >Image</label>
-                        <input type="file" class="form-control" id="clientImage" placeholder="Enter client image" name="clientImage" require>
-                        @error('clientImage')
-                            <div class="alert alert-danger" role="alert">
-                                {{$message}}
-                            </div>
-                         @enderror
-                    </div>
-        
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					
+					<div class="col-md-12">
+						<h2>Profile</h2>
+						<ul class="breadcrumb-tree">
+							<li><a href="{{url('/')}}">Home</a></li>
+							<li class="active"><a href="{{url('product')}}">Product</a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container mt-3" >
+				<div style="text-align: center">
+					<h2 >Client 1</h2>
+					<img src="img/Logo/2.png" width="100px" height="100px"> 
+					
+				</div>
+				
+				@if(Session::has('success'))
+				<div class="alert alert-success" role="alert">
+					{{Session::get('success')}}
+				</div>
+				@endif
+				<form action="{{url('save-client')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
+					@csrf
+		
+					<div class="mb-3">
+						<label for="clientName" >Full name</label>
+						<input type="text" class="form-control" id="clientName" placeholder="Enter client name" name="clientName" require>
+						@error('clientName')
+							<div class="alert alert-danger" role="alert">
+								{{$message}}
+							</div>
+						@enderror
+					</div>
+				
+					<div class="mb-3">
+						<label for="clientPhone" >Phone</label>
+						<input type="number" class="form-control" id="clientPhone" placeholder="Enter client price" name="clientPhone" require>
+						@error('clientPhone')
+							<div class="alert alert-danger" role="alert">
+								{{$message}}
+							</div>
+						 @enderror
+					</div>
+		
+					<div class="mb-3" >
+						<label for="clientAddress" >Address</label>
+						<input type="text" class="form-control" id="clientAddress" placeholder="Enter client address" name="clientAddress" require>
+						@error('clientAddress')
+							<div class="alert alert-danger" role="alert">
+								{{$message}}
+							</div>
+						 @enderror
+					</div>
+					
+					<div class="mb-3" >
+						<label for="clientUsername" >Username</label>
+						<input type="text" class="form-control" id="clientUsername" placeholder="Enter client username" name="clientUsername" require>
+						@error('clientUsername')
+							<div class="alert alert-danger" role="alert">
+								{{$message}}
+							</div>
+						 @enderror
+					</div>
+		
+					<div class="mb-3" >
+						<label for="clientPassword" >Password</label>
+						<input type="text" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" require>
+						@error('clientPassword')
+							<div class="alert alert-danger" role="alert">
+								{{$message}}
+							</div>
+						 @enderror
+					</div>
+					
+					
+		
+				
+		
+				
+		
+					
+				</form>
+			</div>
+			<!-- container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+							<form>
+								<input class="input" type="email" placeholder="Enter Your Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
 		<!-- FOOTER -->
 		<footer id="footer">
 			<!-- top footer -->
@@ -261,11 +350,11 @@
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
 								<h3 class="footer-title">About Us</h3>
-								<p>GearPT - "We sell electronic devices."</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
 								<ul class="footer-links">
-									<li><a><i class="fa fa-map-marker"></i>20 Cong Hoa Street, HCMC.</a></li>
-									<li><a><i class="fa fa-phone"></i>+84-1900-1112</a></li>
-									<li><a><i class="fa fa-envelope-o"></i>contact@gearpt.com</a></li>
+									<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
 								</ul>
 							</div>
 						</div>
@@ -331,8 +420,10 @@
 								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
 								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
 							</ul>
-							<span class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-								GearPT, Inc. All rights reserved.
+							<span class="copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							</span>
 						</div>
 					</div>
@@ -354,3 +445,4 @@
 
 	</body>
 </html>
+

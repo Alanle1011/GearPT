@@ -18,5 +18,8 @@ class HomeController extends Controller
         
         return view('GearPT/home', compact('data'));
     }
+    public function profile(){
+        return view('GearPT/profile');
+    }
 
 }
