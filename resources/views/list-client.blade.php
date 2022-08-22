@@ -215,7 +215,6 @@
                                 <th>Phone</th>
                                 <th>Address</th>
                                 <th>Username</th>
-                                <th>Password</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -229,12 +228,8 @@
                                     <td>{{ $row->clientAddress }}</td>
                                     <td>{{ $row->clientUsername }}</td>
 
-                                    <td>
-                                        <div style="word-wrap:break-word">
-                                            {{ $row->clientPassword }}
-                                        </div>
+                                
 
-                                    </td>
                                     <td><img src="img/GearPT/{{ $row->clientImage }}" width="100px" height="100px"
                                             alt=""></td>
                                     <td>
