@@ -144,12 +144,13 @@
             </ul>
         </div>
         <div class="main-menu-content">
+            <br><br>
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                 <li class="active-toggle"><a href="{{ url('admin-dashboard') }}"><i class="ft-home"></i><span
                             class="menu-title" data-i18n="">Dashboard</span></a>
                 </li>
                 <li class="active-toggle"><a href="{{ url('piechart') }}"><i class="ft-pie-chart"></i><span
-                            class="menu-title" data-i18n="">Piechart</span></a>
+                            class="menu-title" data-i18n="">Pie Chart</span></a>
                 </li>
                 <li class="active-toggle" class="nav-item has-sub dropdown"><a href="#"><i
                             class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
