@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeProductController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ClientController;
 
 use App\Http\Controllers\FeedbackController;
@@ -120,6 +120,7 @@ Route::get('product',[HomeProductController::class,'index']);
 Route::get('productDetail/{id}',[HomeProductController::class,'productDetail']);
 Route::post('home-advancesearch',[HomeProductController::class,'homeAdvanceSearch']);
 Route::get('profile',[HomeController::class,'profile']);
+Route::get('piechart',[ChartController::class,'pieChart'])->middleware('isLogin');;
 
 Route::get('search',[HomeProductController::class,'search']);
 Route::get('register',[ClientController::class,'register']);

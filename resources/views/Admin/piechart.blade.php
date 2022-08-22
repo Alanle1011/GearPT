@@ -31,6 +31,31 @@
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <!-- END Custom CSS-->
+
+    <!-- Pie Chart-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Product Type', 'Number of product'],
+          <?php echo $chartData; ?>
+        ]);
+
+        var options = {
+          title: 'Type of Products'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <!-- Pie Chart-->
+
 </head>
 
 <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click"
@@ -181,7 +206,6 @@
                         </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
         <div class="navigation-background"></div>
@@ -189,60 +213,7 @@
 
     <div class="app-content content">
         <div class="content-wrapper">
-
-            <div class="row">
-                <div class="col-md-12">
-                    @if (Session::has('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ Session::get('success') }}
-                        </div>
-                    @endif
-
-                    <br><br>
-                    <h2>Product Type List</h2>
-                    <br><br>
-
-                    <div>
-                        <a href="{{ url('add-producttype') }}" class="btn btn-dark"
-                            style="float: right; margin-right: 20px;">Add</a>
-                    </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Description</th>
-
-
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($data as $row)
-                                <tr>
-                                    <td>{{ $row->productTypeID }}</td>
-                                    <td>{{ $row->productTypeName }}</td>
-                                    <td>{{ $row->productTypeDescription }}</td>
-                                    <td>
-                                        <a href="{{ url('edit-producttype/' . $row->productTypeID) }}"
-                                            class="btn btn-primary">Edit</a>
-                                        <a href="{{ url('delete-producttype/' . $row->productTypeID) }}"
-                                            class="btn btn-danger"
-                                            onclick="return confirm('Are you sure to Delete this product type')">Delete</a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-
-            <!-- JavaScript-->
-            <!-- Option 1: Bootstrap Bundle with Popper -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-            </script>
+            <div class="content-wrapper" id="piechart" style="width: 900p; height: 500px;"></div>
         </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -258,7 +229,6 @@
             </span>
         </div>
     </footer>
-
 
     <!-- BEGIN VENDOR JS-->
     <script src="theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>

@@ -37,107 +37,150 @@
     data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
 
     <!-- fixed-top-->
-    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
-      <div class="navbar-wrapper">
-        <div class="navbar-container content">
-          <div class="collapse navbar-collapse show" id="navbar-mobile">
-            <ul class="nav navbar-nav mr-auto float-left">
-              <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
-              <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a></li>
-              <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide" data-toggle="dropdown" href="#"><i class="ficon ft-search"></i></a>
-                <ul class="dropdown-menu">
-                  <li class="arrow_box">
-                    <form>
-                      <div class="input-group search-box">
-                        <div class="position-relative has-icon-right full-width">
-                          <input class="form-control" id="search" type="text" placeholder="Search here...">
-                          <div class="form-control-position navbar-search-close"><i class="ft-x">   </i></div>
-                        </div>
-                      </div>
-                    </form>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav float-right">
-              <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flag-icon flag-icon-vn"></i><span class="selected-language"></span></a>
-                <div class="dropdown-menu" aria-labelledby="dropdown-flag">
-                    <div class="arrow_box">
-                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i> English</a>
-                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i> Русский</a>
-                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> Français</a>
-                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i> Español</a>
-                    </div>
+    <nav
+        class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="collapse navbar-collapse show" id="navbar-mobile">
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs"
+                                href="#"><i class="ft-menu"></i></a></li>
+                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i
+                                    class="ficon ft-maximize"></i></a></li>
+                        <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide"
+                                data-toggle="dropdown" href="#"><i class="ficon ft-search"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="arrow_box">
+                                    <form>
+                                        <div class="input-group search-box">
+                                            <div class="position-relative has-icon-right full-width">
+                                                <input class="form-control" id="search" type="text"
+                                                    placeholder="Search here...">
+                                                <div class="form-control-position navbar-search-close"><i
+                                                        class="ft-x"> </i></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link"
+                                id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><i class="flag-icon flag-icon-vn"></i><span
+                                    class="selected-language"></span></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                                <div class="arrow_box">
+                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-gb"></i>
+                                        English</a>
+                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-ru"></i>
+                                        Русский</a>
+                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i>
+                                        Français</a>
+                                    <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-es"></i>
+                                        Español</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav float-right">
+                        <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label"
+                                href="#" data-toggle="dropdown"><i class="ficon ft-mail"> </i></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><i
+                                            class="ft-book"></i> Read Mail</a><a class="dropdown-item"
+                                        href="#"><i class="ft-bookmark"></i> Read Later</a><a
+                                        class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all
+                                        Read </a></div>
+                            </div>
+                        </li>
+                        <li class="dropdown dropdown-user nav-item"><a
+                                class="dropdown-toggle nav-link dropdown-user-link" href="#"
+                                data-toggle="dropdown">
+                                <span class="avatar avatar-online"><img
+                                        src="img/GearPT/{{ Session::get('adminloginImage') }}"
+                                        alt="avatar"><i></i></span></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="arrow_box_right">
+                                    <a class="dropdown-item" href="admin-dashboard"><span
+                                            class="avatar avatar-online"><img
+                                                src="img/GearPT/{{ Session::get('adminloginImage') }}"
+                                                alt="avatar"><span
+                                                class="user-name text-bold-700 ml-1">{{ Session::get('adminloginName') }}</span></span></a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="{{ url('/') }}"><i class="ft-link"></i>
+                                        Website</a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="{{ url('admin-logout') }}"><i
+                                            class="ft-power"></i> Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav float-right">
-              <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail">             </i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <div class="arrow_box_right"><a class="dropdown-item" href="#"><i class="ft-book"></i> Read Mail</a><a class="dropdown-item" href="#"><i class="ft-bookmark"></i> Read Later</a><a class="dropdown-item" href="#"><i class="ft-check-square"></i> Mark all Read       </a></div>
-                </div>
-              </li>
-              <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                <span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><i></i></span></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="arrow_box_right">
-                        <a class="dropdown-item" href="admin-dashboard"><span class="avatar avatar-online"><img src="img/GearPT/{{Session::get('adminloginImage')}}" alt="avatar"><span class="user-name text-bold-700 ml-1">{{Session::get('adminloginName')}}</span></span></a>
-                        
-                        <div class="dropdown-divider"></div>
-                        
-                        <a class="dropdown-item" href="{{url('/')}}"><i class="ft-link"></i> Website</a>
-                        
-                        <div class="dropdown-divider"></div>
-                        
-                        <a class="dropdown-item" href="{{url('admin-logout')}}"><i class="ft-power"></i> Logout</a>
-                    </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
 
-    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" 
+    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true"
         data-img="theme-assets/images/backgrounds/02.jpg">
         <div class="navbar-header">
-        <ul class="nav navbar-nav flex-row">
-          <li class="nav-item mr-auto"><a href="{{url('admin-dashboard')}}"><img 
-                        class="logo" alt="Chameleon admin logo" 
-                        src="img/Logo/3.png" height="74" width="170"/>
-          <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
-        </ul>
-      </div>
-      <div class="main-menu-content">
-        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-          <li class="active-toggle"><a href="{{url('admin-dashboard')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
-          </li>
-          <li class="active-toggle" class="nav-item has-sub dropdown"><a href="#"><i class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
-            <ul class="menu-content">
-                <li class=" nav-item"><a href="{{url('list-admin')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Admin</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{url('list-staff')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Staff</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{url('list-client')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Client</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{url('list-product')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Product</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{url('list-producttype')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Product type</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{url('list-producer')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Producer</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{url('list-order')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Order</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{url('list-orderdetail')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Order Detail</span></a>
-                </li>
-                <li class=" nav-item"><a href="{{url('list-feedback')}}"><i class="la la-table"></i><span class="menu-title" data-i18n=""> Feedback</span></a>
-                </li>
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto"><a href="{{ url('admin-dashboard') }}"><img class="logo"
+                            alt="Chameleon admin logo" src="img/Logo/3.png" height="74" width="170" />
+                <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
             </ul>
-          </li>
+        </div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class="active-toggle"><a href="{{ url('admin-dashboard') }}"><i class="ft-home"></i><span
+                            class="menu-title" data-i18n="">Dashboard</span></a>
+                </li>
+                <li class="active-toggle"><a href="{{ url('piechart') }}"><i class="ft-pie-chart"></i><span
+                            class="menu-title" data-i18n="">Piechart</span></a>
+                </li>
+                <li class="active-toggle" class="nav-item has-sub dropdown"><a href="#"><i
+                            class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
+                    <ul class="menu-content">
+                        <li class=" nav-item"><a href="{{ url('list-admin') }}"><i class="la la-table"></i><span
+                                    class="menu-title" data-i18n=""> Admin</span></a>
+                        </li>
+                        <li class=" nav-item"><a href="{{ url('list-staff') }}"><i class="la la-table"></i><span
+                                    class="menu-title" data-i18n=""> Staff</span></a>
+                        </li>
+                        <li class=" nav-item"><a href="{{ url('list-client') }}"><i class="la la-table"></i><span
+                                    class="menu-title" data-i18n=""> Client</span></a>
+                        </li>
+                        <li class=" nav-item"><a href="{{ url('list-product') }}"><i class="la la-table"></i><span
+                                    class="menu-title" data-i18n=""> Product</span></a>
+                        </li>
+                        <li class=" nav-item"><a href="{{ url('list-producttype') }}"><i
+                                    class="la la-table"></i><span class="menu-title" data-i18n=""> Product
+                                    type</span></a>
+                        </li>
+                        <li class=" nav-item"><a href="{{ url('list-producer') }}"><i class="la la-table"></i><span
+                                    class="menu-title" data-i18n=""> Producer</span></a>
+                        </li>
+                        <li class=" nav-item"><a href="{{ url('list-order') }}"><i class="la la-table"></i><span
+                                    class="menu-title" data-i18n=""> Order</span></a>
+                        </li>
+                        <li class=" nav-item"><a href="{{ url('list-orderdetail') }}"><i
+                                    class="la la-table"></i><span class="menu-title" data-i18n=""> Order
+                                    Detail</span></a>
+                        </li>
+                        <li class=" nav-item"><a href="{{ url('list-feedback') }}"><i class="la la-table"></i><span
+                                    class="menu-title" data-i18n=""> Feedback</span></a>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
         </div>
@@ -146,65 +189,68 @@
 
     <div class="app-content content">
         <div class="content-wrapper">
-            
+
             <div class="row">
                 <div class="col-md-12">
-                    @if(Session::has('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{Session::get('success')}}
-                    </div>
+                    @if (Session::has('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ Session::get('success') }}
+                        </div>
                     @endif
-                    
+
                     <br><br>
                     <h2>Product List</h2>
                     <br><br>
 
                     <div class="container">
-                        <form action="{{url('product-advancesearch')}}" method="POST">
+                        <form action="{{ url('product-advancesearch') }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col">
-                                    <label for="productName" >Product Name</label>
-                                    <input type="text" class="form-control" id="productName" placeholder="Enter product name"  name="productName">
+                                    <label for="productName">Product Name</label>
+                                    <input type="text" class="form-control" id="productName"
+                                        placeholder="Enter product name" name="productName">
                                 </div>
                                 <div class="col">
-                                    <label for="productPrice" >Product Price</label>
-                                    <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" name="productPrice">
+                                    <label for="productPrice">Product Price</label>
+                                    <input type="number" class="form-control" id="productPrice"
+                                        placeholder="Enter product price" name="productPrice">
                                 </div>
-                                
+
                                 <div class="col">
-                                    <label for="productProducer" >Product Producer</label>
+                                    <label for="productProducer">Product Producer</label>
                                     <select class="form-control" name="productProducer" id="productProducer">
                                         <option value="" disabled selected>Select a Type</option>
-                                        @foreach($producerdata as $row)
-                                        <option value="{{$row->producerID}}"> 
-                                            {{$row->producerID}} - {{$row->producerName}}
-                                        </option>
+                                        @foreach ($producerdata as $row)
+                                            <option value="{{ $row->producerID }}">
+                                                {{ $row->producerID }} - {{ $row->producerName }}
+                                            </option>
                                         @endforeach
                                     </select>
-                                </div>  
+                                </div>
                                 <div class="col">
-                                    <label for="productType" >Product Type</label>
-                                    <select class="form-control" name="productType" id="productType" >
+                                    <label for="productType">Product Type</label>
+                                    <select class="form-control" name="productType" id="productType">
                                         <option value="" disabled selected>Select a Type</option>
-                                        @foreach($productTypedata as $row)
-                                        <option value="{{$row->productTypeID}}"> 
-                                            {{$row->productTypeID}} - {{$row->productTypeName}} 
-                                        </option>
+                                        @foreach ($productTypedata as $row)
+                                            <option value="{{ $row->productTypeID }}">
+                                                {{ $row->productTypeID }} - {{ $row->productTypeName }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="col" style="margin-top: 25px">
                                     <button class="btn btn-success">Search</button>
-                                    <a href="{{url('list-product')}}" class="btn btn-danger">Cancel</a> 
+                                    <a href="{{ url('list-product') }}" class="btn btn-danger">Cancel</a>
                                 </div>
-                                
-                                  
+
+
                             </div>
                         </form>
-                      </div>
+                    </div>
                     <div>
-                        <a href="{{url('add-product')}}" class="btn btn-dark" style="float: right; margin-right: 20px;"  >Add</a>
+                        <a href="{{ url('add-product') }}" class="btn btn-dark"
+                            style="float: right; margin-right: 20px;">Add</a>
                     </div>
                     <table class="table">
                         <thead>
@@ -216,34 +262,37 @@
                                 <th>Image</th>
                                 <th>Producer</th>
                                 <th>Type</th>
-                                
-                                
+
+
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($data as $row)
-                            <tr>
-                                <td>{{$row->productID}}</td>
-                                <td>{{$row->productName}}</td>
-                                <td>{{$row->productPrice}}</td>
-                                <td>{{$row->productDescription}}</td>
-                                <td><img src="img/GearPT/{{$row->productImage}}" width="100px" height="100px" alt=""></td>
-                                <td>{{$row->producerName}}</td>
-                                <td>{{$row->productTypeName}}</td>
-                                <td>
-                                    <a href="{{url('edit-product/'.$row->productID)}}" class="btn btn-primary">Edit</a>
-                                    <a href="{{url('delete-product/'.$row->productID)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete this product')">Delete</a>
-                                </td>
-                            </tr>
+                            @foreach ($data as $row)
+                                <tr>
+                                    <td>{{ $row->productID }}</td>
+                                    <td>{{ $row->productName }}</td>
+                                    <td>{{ $row->productPrice }}</td>
+                                    <td>{{ $row->productDescription }}</td>
+                                    <td><img src="img/GearPT/{{ $row->productImage }}" width="100px" height="100px"
+                                            alt=""></td>
+                                    <td>{{ $row->producerName }}</td>
+                                    <td>{{ $row->productTypeName }}</td>
+                                    <td>
+                                        <a href="{{ url('edit-product/' . $row->productID) }}"
+                                            class="btn btn-primary">Edit</a>
+                                        <a href="{{ url('delete-product/' . $row->productID) }}" class="btn btn-danger"
+                                            onclick="return confirm('Are you sure to Delete this product')">Delete</a>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    
+
                 </div>
             </div>
-            
-        
+
+
             <!-- JavaScript-->
             <!-- Option 1: Bootstrap Bundle with Popper -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -255,11 +304,14 @@
 
 
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
-      <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-        <span class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            GearPT, Inc. All rights reserved.
-        </span>
-      </div>
+        <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+            <span class="copyright">Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                GearPT, Inc. All rights reserved.
+            </span>
+        </div>
     </footer>
 
 
