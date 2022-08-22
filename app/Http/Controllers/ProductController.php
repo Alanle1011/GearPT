@@ -106,8 +106,12 @@ class ProductController extends Controller
             $data = Product::where('productTypeID', 'LIKE', "%" . $request->productType . "%")->get(); 
              
         }
-        
-        
+        if(!empty($request->productType) && !empty($request->productProducer)){
+            $data = Product::where('productTypeID', 'LIKE', "%" . $request->productType . "%")
+                            ->where('producerID', 'LIKE', "%" . $request->productProducer . "%")
+                            ->get(); 
+             
+        }
         
         return view('list-product', compact('data','productTypedata','producerdata'));
         
