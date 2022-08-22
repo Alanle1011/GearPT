@@ -97,19 +97,53 @@ class ProductController extends Controller
         ->join('producers','producers.producerID','products.producerID')
         ->select('products.*','product_types.productTypeName','producers.producerName')
         ->get();
+
+        if(!empty($request->productName)){
+            $data = DB::table('products')
+            ->join('product_types','product_types.productTypeID','products.productTypeID')
+            ->join('producers','producers.producerID','products.producerID')
+            ->select('products.*','product_types.productTypeName','producers.producerName')
+            ->where('productName','LIKE','%'.$request->productName.'%')
+            ->get();
+           
+        }
         
-        
+        if(!empty($request->productPrice)){
+            $data = DB::table('products')
+            ->join('product_types','product_types.productTypeID','products.productTypeID')
+            ->join('producers','producers.producerID','products.producerID')
+            ->select('products.*','product_types.productTypeName','producers.producerName')
+            ->where('productPrice', 'LIKE', "%" . $request->productPrice . "%")
+            ->get();
+           
+        }
         if(!empty($request->productProducer)){
-            $data = Product::where('producerID', 'LIKE', "%" . $request->productProducer . "%")->get();  
+            $data = DB::table('products')
+            ->join('product_types','product_types.productTypeID','products.productTypeID')
+            ->join('producers','producers.producerID','products.producerID')
+            ->select('products.*','product_types.productTypeName','producers.producerName')
+            ->where('producerID', 'LIKE', "%" . $request->productProducer . "%")
+            ->get();
+            
         }
         if(!empty($request->productType)){
-            $data = Product::where('productTypeID', 'LIKE', "%" . $request->productType . "%")->get(); 
+            $data = DB::table('products')
+            ->join('product_types','product_types.productTypeID','products.productTypeID')
+            ->join('producers','producers.producerID','products.producerID')
+            ->select('products.*','product_types.productTypeName','producers.producerName')
+            ->where('productTypeID', 'LIKE', "%" . $request->productType . "%")
+            ->get();
+        
              
         }
         if(!empty($request->productType) && !empty($request->productProducer)){
-            $data = Product::where('productTypeID', 'LIKE', "%" . $request->productType . "%")
-                            ->where('producerID', 'LIKE', "%" . $request->productProducer . "%")
-                            ->get(); 
+            $data = DB::table('products')
+                    ->join('product_types','product_types.productTypeID','products.productTypeID')
+                    ->join('producers','producers.producerID','products.producerID')
+                    ->select('products.*','product_types.productTypeName','producers.producerName')
+                    ->where('productTypeID', 'LIKE', "%" . $request->productType . "%")
+                    ->where('producerID', 'LIKE', "%" . $request->productProducer . "%")
+                    ->get(); 
              
         }
         
