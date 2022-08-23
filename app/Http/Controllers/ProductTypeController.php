@@ -23,14 +23,11 @@ class ProductTypeController extends Controller
          
             'productTypeName' => 'required',
         ]);
-      
-   
         $productTypeName = $request->productTypeName;
         $productTypeDescription = $request->productTypeDescription;
         
 
         $producttype = new ProductType();
-      
         $producttype->productTypeName = $productTypeName;
         $producttype->productTypeDescription = $productTypeDescription;
         $producttype->save();

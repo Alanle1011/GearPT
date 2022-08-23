@@ -18,7 +18,7 @@ class ProductController extends Controller
         ->join('product_types','product_types.productTypeID','products.productTypeID')
         ->join('producers','producers.producerID','products.producerID')
         ->select('products.*','product_types.productTypeName','producers.producerName')
-        ->paginate(15);
+        ->get();
 
         return view('list-product', compact('data','productTypedata','producerdata'));
     }
@@ -29,7 +29,6 @@ class ProductController extends Controller
     }
     public function saveProduct(Request $request)
     {
-
         $request->validate([
             'productName' => 'required',
             'productPrice' => 'required',
@@ -55,14 +54,13 @@ class ProductController extends Controller
         $prd->productImage = $productImage;
         $prd->productTypeID = $productType;
         $prd->producerID = $productProducer;
+
         $prd->save();
         
 
         return redirect()->back()->with('success','Product Added Successfully');
     }
     public function editProduct($id){
-        
-
         $data = Product::where('productID','=',$id)->first();
         $productTypedata = ProductType::get();
         $producerdata =Producer::get();

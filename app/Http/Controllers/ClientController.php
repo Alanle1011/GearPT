@@ -135,6 +135,7 @@ class ClientController extends Controller
             return back()->with('fail','You have input wrong Username or Password. Please try again !!!!');
         };
     }
+    
     public function logout(){
         if(Session::has('loginID')){
             Session::pull('loginID');
