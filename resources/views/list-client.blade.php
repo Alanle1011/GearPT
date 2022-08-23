@@ -209,9 +209,14 @@
                             @csrf
                             <div class="row">
                                 <div class="col">
-                                    <label for="clientName">Client Name</label>
+                                    <label for="clientName">Name</label>
                                     <input type="text" class="form-control" id="clientName"
-                                        placeholder="Enter client name" name="clientName">
+                                        placeholder="Enter name" name="clientName">
+                                </div>
+                                <div class="col">
+                                    <label for="clientPhone">Phone</label>
+                                    <input type="text" class="form-control" id="clientPhone"
+                                        placeholder="Enter Phone" name="clientPhone">
                                 </div>
                                 {{-- <div class="col">
                                     <label for="productPrice">Product Price</label>

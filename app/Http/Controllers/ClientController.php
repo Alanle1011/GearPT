@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash ;
 use Illuminate\Support\Facades\Session;
 use App\Models\Client;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -156,15 +157,20 @@ class ClientController extends Controller
         
         $data = Client::where('clientName','LIKE','%'.$request->clientName.'%')->get();
 
-        // if(!empty($request->productName)){
-        //     $data = DB::table('products')
-        //     ->join('product_types','product_types.productTypeID','products.productTypeID')
-        //     ->join('producers','producers.producerID','products.producerID')
-        //     ->select('products.*','product_types.productTypeName','producers.producerName')
-        //     ->where('productName','LIKE','%'.$request->productName.'%')
-        //     ->get();
-           
-        // }
+        if(!empty($request->clientName)){
+            $data = Client::where('clientName','LIKE','%'.$request->clientName.'%')->get();
+        }
+        if(!empty($request->clientPhone)){
+            $data = Client::where('clientPhone','LIKE','%'.$request->clientPhone.'%')->get();
+        }
+        if(!empty($request->clientName) && !empty($request->clientPhone)){
+            $data = DB::table('clients')
+                    ->where('clientName','LIKE','%'.$request->clientName.'%')
+                    ->where('clientPhone','LIKE','%'.$request->clientPhone.'%')
+                    ->get();
+             
+        }
+
         
                 
         return view('list-client', compact('data'));
