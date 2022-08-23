@@ -54,6 +54,8 @@ Route::post('save-client',[ClientController::class,'saveClient'])->middleware('i
 Route::get('edit-client/{id}',[ClientController::class,'editClient'])->middleware('isLogin');
 Route::post('update-client',[ClientController::class,'updateClient'])->middleware('isLogin');
 Route::get('delete-client/{id}',[ClientController::class,'deleteClient'])->middleware('isLogin');
+Route::post('client-advancesearch',[ClientController::class,'advanceSearch'])->middleware('isLogin');
+
 
 // Feedback:
 Route::get('list-feedback',[FeedbackController::class,'index'])->middleware('isLogin');
@@ -119,7 +121,7 @@ Route::get('/',[HomeController::class,'index']);
 Route::get('product',[HomeProductController::class,'index']);
 Route::get('productDetail/{id}',[HomeProductController::class,'productDetail']);
 Route::post('home-advancesearch',[HomeProductController::class,'homeAdvanceSearch']);
-Route::get('profile',[HomeController::class,'profile']);
+Route::get('profile/{id}',[HomeController::class,'profile']);
 Route::get('piechart',[ChartController::class,'pieChart'])->middleware('isLogin');;
 
 Route::get('search',[HomeProductController::class,'search']);

@@ -222,7 +222,7 @@
 									</div>	
 								@endif
 														
-								<form action="{{url('register-process')}}" method="post">
+								<form action="{{url('register-process')}}" enctype="multipart/form-data" method="post">
 									@csrf
 									<div style="align-content: center;">
 										<h2 style="text-align: center">Register</h2>
@@ -280,8 +280,8 @@
 										</button>
 										<a href="{{url('/')}}" class="primary-btn cta-btn">Cancel</a>
 									</div>
-									
 								</form>
+								
 							</div>
 						</div>
 					</div>

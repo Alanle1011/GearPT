@@ -18,8 +18,9 @@ class HomeController extends Controller
         
         return view('GearPT/home', compact('data'));
     }
-    public function profile(){
-        return view('GearPT/profile');
+    public function profile($id){
+        $data = Client::where('clientName','=', $id)->first();
+        return view('GearPT/profile',compact('data'));
     }
 
 }

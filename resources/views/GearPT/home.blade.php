@@ -62,7 +62,7 @@
 					@if (Session::has('loginID'))
 						
 					<ul class="header-links pull-right">
-						<li><a href="{{url('profile')}}"><i class="fa fa-user-o"></i> {{Session::get('loginID')}}</a></li>
+						<li><a href="{{url('profile/'. Session::get('loginID') )}}"><i class="fa fa-user-o"></i> {{Session::get('loginID')}}</a></li>
 						<li><a href="{{url('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
 					</ul>
 						

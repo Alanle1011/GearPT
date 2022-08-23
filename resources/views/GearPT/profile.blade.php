@@ -7,27 +7,27 @@
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 		<title>Profile - GEARPT</title>
-		<link rel="apple-touch-icon" href="img/Logo/2.png">
-		<link rel="shortcut icon" type="image/x-icon" href="img/Logo/2.png">
+		<link rel="apple-touch-icon" href="../img/Logo/2.png">
+		<link rel="shortcut icon" type="image/x-icon" href="../img/Logo/2.png">
 	
  		<!-- Google font -->
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
  		<!-- Bootstrap -->
- 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+ 		<link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css"/>
 
  		<!-- Slick -->
- 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
- 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+ 		<link type="text/css" rel="stylesheet" href="../css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="../css/slick-theme.css"/>
 
  		<!-- nouislider -->
- 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+ 		<link type="text/css" rel="stylesheet" href="../css/nouislider.min.css"/>
 
  		<!-- Font Awesome Icon -->
- 		<link rel="stylesheet" href="css/font-awesome.min.css">
+ 		<link rel="stylesheet" href="../css/font-awesome.min.css">
 
  		<!-- Custom stlylesheet -->
- 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+ 		<link type="text/css" rel="stylesheet" href="../css/style.css"/>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,15 +49,15 @@
 						<li><a><i class="fa fa-map-marker"></i> 20 Cong Hoa Street, HCMC.</a></li>
 					</ul>
 
-					<ul class="header-links pull-right">
+					{{-- <ul class="header-links pull-right">
 						<li><a href="{{url('profile')}}"><i class="fa fa-user-o"></i> Client1</a></li>
 						<li><a href="{{url('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
-					</ul>
+					</ul> --}}
 					
-					{{-- @if (Session::has('loginID'))
+					@if (Session::has('loginID'))
 						
 					<ul class="header-links pull-right">
-						<li><a href="{{url('profile')}}"><i class="fa fa-user-o"></i> {{Session::get('loginID')}}</a></li>
+						<li><a href="{{url('profile/'.Session::get('loginID') )}}"><i class="fa fa-user-o"></i> {{Session::get('loginID')}}</a></li>
 						<li><a href="{{url('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
 					</ul>
 						
@@ -67,7 +67,7 @@
 							<li><a href="{{url('login')}}"><i class="fa fa-sign-in"></i> Login</a></li>
 						</ul>
 
-					@endif --}}
+					@endif
 				</div>
 			</div>
 			<!-- /TOP HEADER -->
@@ -128,7 +128,7 @@
 										<div class="cart-list">
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="./img/product01.png" alt="">
+													<img src="../img/product01.png" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -139,7 +139,7 @@
 
 											<div class="product-widget">
 												<div class="product-img">
-													<img src="./img/product02.png" alt="">
+													<img src="../img/product02.png" alt="">
 												</div>
 												<div class="product-body">
 													<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -227,23 +227,20 @@
 			<!-- container -->
 			<div class="container mt-3" >
 				<div style="text-align: center">
-					<h2 >Client 1</h2>
-					<img src="img/Logo/2.png" width="100px" height="100px"> 
+					<h2 >{{$data->clientName}}</h2>
+					<img src="../img/GearPT/{{$data->clientImage}}" width="100px" height="100px"> 
 					
 				</div>
 				
-				@if(Session::has('success'))
-				<div class="alert alert-success" role="alert">
-					{{Session::get('success')}}
-				</div>
+				@if(Session::has('loginID'))
 				@endif
 				<form action="{{url('save-client')}}" method="post" enctype="multipart/form-data" style="margin: 50px">
 					@csrf
 		
 					<div class="mb-3">
 						<label for="clientName" >Full name</label>
-						<input type="text" class="form-control" id="clientName" placeholder="Enter client name" name="clientName" require>
-						@error('clientName')
+						<input type="text" class="form-control" id="clientName" placeholder="Enter client name" name="clientName" require value="{{$data->clientName}}"><a><i> </i></a>
+						@error('name')
 							<div class="alert alert-danger" role="alert">
 								{{$message}}
 							</div>
@@ -252,8 +249,8 @@
 				
 					<div class="mb-3">
 						<label for="clientPhone" >Phone</label>
-						<input type="number" class="form-control" id="clientPhone" placeholder="Enter client price" name="clientPhone" require>
-						@error('clientPhone')
+						<input type="text" class="form-control" id="clientPhone" placeholder="Enter client price" name="clientPhone" value="{{$data->clientPhone}}" require>
+						@error('phone')
 							<div class="alert alert-danger" role="alert">
 								{{$message}}
 							</div>
@@ -261,42 +258,14 @@
 					</div>
 		
 					<div class="mb-3" >
-						<label for="clientAddress" >Address</label>
-						<input type="text" class="form-control" id="clientAddress" placeholder="Enter client address" name="clientAddress" require>
-						@error('clientAddress')
+						<label for="address" >Address</label>
+						<input type="text" class="form-control" id="clientAddress" placeholder="Enter client address" name="address" value="{{$data->clientAddress}}" require >
+						@error('address')
 							<div class="alert alert-danger" role="alert">
 								{{$message}}
 							</div>
 						 @enderror
 					</div>
-					
-					<div class="mb-3" >
-						<label for="clientUsername" >Username</label>
-						<input type="text" class="form-control" id="clientUsername" placeholder="Enter client username" name="clientUsername" require>
-						@error('clientUsername')
-							<div class="alert alert-danger" role="alert">
-								{{$message}}
-							</div>
-						 @enderror
-					</div>
-		
-					<div class="mb-3" >
-						<label for="clientPassword" >Password</label>
-						<input type="text" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" require>
-						@error('clientPassword')
-							<div class="alert alert-danger" role="alert">
-								{{$message}}
-							</div>
-						 @enderror
-					</div>
-					
-					
-		
-				
-		
-				
-		
-					
 				</form>
 			</div>
 			<!-- container -->
@@ -436,12 +405,12 @@
 		<!-- /FOOTER -->
 
 		<!-- jQuery Plugins -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slick.min.js"></script>
-		<script src="js/nouislider.min.js"></script>
-		<script src="js/jquery.zoom.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/slick.min.js"></script>
+		<script src="../js/nouislider.min.js"></script>
+		<script src="../js/jquery.zoom.min.js"></script>
+		<script src="../js/main.js"></script>
 
 	</body>
 </html>

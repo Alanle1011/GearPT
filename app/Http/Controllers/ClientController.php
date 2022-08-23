@@ -37,8 +37,8 @@ class ClientController extends Controller
         $clientName = $request->clientName;
         $clientPhone = $request->clientPhone;
         $clientAddress= $request->clientAddress;
-        $clientUsername = Hash::make($request->clientUsername);
-        $clientPassword = $request->clientPassword;
+        $clientUsername = $request->clientUsername;
+        $clientPassword = Hash::make($request->clientPassword);
         $clientImage= $request->file('clientImage')->getClientOriginalName();
         
         //move Upladed file
@@ -102,7 +102,14 @@ class ClientController extends Controller
         $client->clientUsername = $request->username;
         $client->clientPassword = Hash::make($request->password);
         $client->clientImage = $request->image;
+        $image= $request->file('image')->getClientOriginalName();
+        //move Upladed file
+        $request->image->move(public_path('img/GearPT'),$image);
         $res = $client->save();
+
+
+
+        
         if($res){
             return back()->with('success','You have register successfully');
         }else{
@@ -141,5 +148,26 @@ class ClientController extends Controller
             Session::pull('loginID');
             return redirect('/');
         }
+    }
+
+
+    public function advanceSearch(Request $request)
+    {
+        
+        $data = Client::where('clientName','LIKE','%'.$request->clientName.'%')->get();
+
+        // if(!empty($request->productName)){
+        //     $data = DB::table('products')
+        //     ->join('product_types','product_types.productTypeID','products.productTypeID')
+        //     ->join('producers','producers.producerID','products.producerID')
+        //     ->select('products.*','product_types.productTypeName','producers.producerName')
+        //     ->where('productName','LIKE','%'.$request->productName.'%')
+        //     ->get();
+           
+        // }
+        
+                
+        return view('list-client', compact('data'));
+        
     }
 }

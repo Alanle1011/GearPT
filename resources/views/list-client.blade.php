@@ -202,6 +202,55 @@
                     <br><br>
                     <h2>Client List</h2>
                     <br><br>
+                    
+
+                    <div class="container">
+                        <form action="{{ url('client-advancesearch') }}" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col">
+                                    <label for="clientName">Client Name</label>
+                                    <input type="text" class="form-control" id="clientName"
+                                        placeholder="Enter client name" name="clientName">
+                                </div>
+                                {{-- <div class="col">
+                                    <label for="productPrice">Product Price</label>
+                                    <input type="number" class="form-control" id="productPrice"
+                                        placeholder="Enter product price" name="productPrice">
+                                </div>
+
+                                <div class="col">
+                                    <label for="productProducer">Product Producer</label>
+                                    <select class="form-control" name="productProducer" id="productProducer">
+                                        <option value="" disabled selected>Select a Type</option>
+                                        @foreach ($producerdata as $row)
+                                            <option value="{{ $row->producerID }}">
+                                                {{ $row->producerID }} - {{ $row->producerName }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="productType">Product Type</label>
+                                    <select class="form-control" name="productType" id="productType">
+                                        <option value="" disabled selected>Select a Type</option>
+                                        @foreach ($productTypedata as $row)
+                                            <option value="{{ $row->productTypeID }}">
+                                                {{ $row->productTypeID }} - {{ $row->productTypeName }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div> --}}
+                                <div class="col" style="margin-top: 25px">
+                                    <button class="btn btn-success">Search</button>
+                                    <a href="{{ url('list-client') }}" class="btn btn-danger">Cancel</a>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+
 
                     <div>
                         <a href="{{ url('add-client') }}" class="btn btn-dark"
