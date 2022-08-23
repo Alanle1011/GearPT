@@ -221,7 +221,7 @@
                                 <tr>
                                     <td>{{ $row->producerID }}</td>
                                     <td>{{ $row->producerName }}</td>
-                                    <td>{{ $row->producerImage }}</td>
+                                    <td><img src="img/GearPT/{{ $row->producerImage }}" width="100px" height="100px" alt=""></td>
                                     <td>
 
                                         <a href="{{ url('edit-producer/' . $row->producerID) }}"

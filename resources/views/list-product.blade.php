@@ -275,8 +275,7 @@
                                     <td>{{ $row->productName }}</td>
                                     <td>{{ $row->productPrice }}</td>
                                     <td>{{ $row->productDescription }}</td>
-                                    <td><img src="img/GearPT/{{ $row->productImage }}" width="100px" height="100px"
-                                            alt=""></td>
+                                    <td><img src="img/GearPT/{{ $row->productImage }}" width="100px" height="100px" alt=""></td>
                                     <td>{{ $row->producerName }}</td>
                                     <td>{{ $row->productTypeName }}</td>
                                     <td>
