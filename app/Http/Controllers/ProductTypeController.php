@@ -14,7 +14,6 @@ class ProductTypeController extends Controller
         return view('list-producttype', compact('data'));
     }
     public function addProductType(){
-        $producttypeID = ProductType::get();
         return view('add-producttype');
     }
     public function saveProductType(Request $request)
