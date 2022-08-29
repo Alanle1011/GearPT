@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
-    <title>Pie Chart - GEARPT</title>
+    <title>Bar Chart - GEARPT</title>
     <link rel="apple-touch-icon" href="img/Logo/2.png">
     <link rel="shortcut icon" type="image/x-icon" href="img/Logo/2.png">
     <link
@@ -32,24 +32,24 @@
     <!-- BEGIN Custom CSS-->
     <!-- END Custom CSS-->
 
-    <!-- Pie Chart-->
+    <!-- Bar Chart-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Product Type', 'Number of product'],
-          <?php echo $chartData; ?>
+          ['Producer', 'Number of product'],
+          <?php echo $barchartData; ?>
         ]);
 
         var options = {
-          title: 'Types of Product'
+          title: 'Producers'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.barChart(document.getElementById('barchart'));
 
         chart.draw(data, options);
       };
@@ -61,6 +61,8 @@
 
 <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click"
     data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
+
+    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
 
     <!-- fixed-top-->
     <nav
@@ -168,42 +170,43 @@
         <div class="main-menu-content">
             <br><br>
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="active-toggle"><a href="{{ url('admin-dashboard') }}"><i class="ft-home"></i><span
+                <li class="active-toggle"><a href="{{ url('admin-dashboard') }}"><i class="la la-home"></i><span
                             class="menu-title" data-i18n="">Dashboard</span></a>
                 </li>
-                <li class="active-toggle"><a href="{{ url('piechart') }}"><i class="ft-pie-chart"></i><span
+                <li class="active-toggle"><a href="{{ url('barchart') }}"><i class="la la-bar-chart"></i><span
+                            class="menu-title" data-i18n="">Bar Chart</span></a>
+                </li>
+                <li class="active-toggle"><a href="{{ url('piechart') }}"><i class="la la-pie-chart"></i><span
                             class="menu-title" data-i18n="">Pie Chart</span></a>
                 </li>
-                <li class="active-toggle" class="nav-item has-sub dropdown"><a href="#"><i
-                            class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
+                <li class="active-toggle" class="nav-item has-sub dropdown"><a href="#"><i class="la la-list"></i><span
+                            class="menu-title" data-i18n="">Table List</span></a>
                     <ul class="menu-content">
-                        <li class=" nav-item"><a href="{{ url('list-admin') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-admin') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Admin</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-staff') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-staff') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Staff</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-client') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-client') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Client</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-product') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-product') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Product</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-producttype') }}"><i
-                                    class="la la-table"></i><span class="menu-title" data-i18n=""> Product
-                                    type</span></a>
+                        <li class=" nav-item"><a href="{{ url('list-producttype') }}"><i class="ft-table"></i><span
+                                    class="menu-title" data-i18n=""> Product type</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-producer') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-producer') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Producer</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-order') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-order') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Order</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-orderdetail') }}"><i
-                                    class="la la-table"></i><span class="menu-title" data-i18n=""> Order
-                                    Detail</span></a>
+                        <li class=" nav-item"><a href="{{ url('list-orderdetail') }}"><i class="ft-table"></i><span
+                                    class="menu-title" data-i18n=""> Order Detail</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-feedback') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-feedback') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Feedback</span></a>
                         </li>
                     </ul>

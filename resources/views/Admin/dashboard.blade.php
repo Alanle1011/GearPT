@@ -149,6 +149,9 @@
                 <li class="active-toggle"><a href="{{ url('admin-dashboard') }}"><i class="ft-home"></i><span
                             class="menu-title" data-i18n="">Dashboard</span></a>
                 </li>
+                <li class="active-toggle"><a href="{{ url('barchart') }}"><i class="ft-bar-chart"></i><span
+                            class="menu-title" data-i18n="">Bar Chart</span></a>
+                </li>
                 <li class="active-toggle"><a href="{{ url('piechart') }}"><i class="ft-pie-chart"></i><span
                             class="menu-title" data-i18n="">Pie Chart</span></a>
                 </li>
