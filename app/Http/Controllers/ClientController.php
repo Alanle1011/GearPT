@@ -23,15 +23,13 @@ class ClientController extends Controller
     }
     public function saveClient(Request $request)
     {
-
         $request->validate([
-            
-            'clientName' => 'required',
+            'clientName' => 'required|max:100',
             'clientPhone' => 'required',
             'clientAddress' => 'required',
             'clientUsername' => 'required',
             'clientPassword' => 'required',
-            'clientImage' => 'required'
+            'clientImage' => 'required|file|max:100'
         ]);
       
       
@@ -63,6 +61,29 @@ class ClientController extends Controller
         $data = Client::where('clientID','=',$id)->first();
         return view('edit-client',compact('data'));
     }
+    public function editClientPass($id){
+        $data = Client::where('clientID','=',$id)->first();
+        return view('edit-clientpass',compact('data'));
+    }
+    public function checkPass(Request $request){
+        $id = $request->clientID;
+        $oldPass = $request->clientOldPassword;
+        $newPass = $request->clientnewPassword;
+        $client = Client::where('clientID','=',$id)->first();
+
+        if(Hash::check($oldPass,$client->clientPassword)){
+            Client::where('clientID','=',$id)->update([
+                'clientPassword' => Hash::make($newPass),
+            ]);
+            $data = $client;
+            return view('edit-client',compact('data'));
+        }else{
+           return redirect()->back()->with('fail', 'You have input wrong password');
+        }
+        
+
+    }
+
     public function updateClient(Request $request){
         $id = $request->clientID;
 

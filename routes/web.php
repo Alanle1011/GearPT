@@ -52,6 +52,9 @@ Route::get('list-client',[ClientController::class,'index'])->middleware('isLogin
 Route::get('add-client',[ClientController::class,'addClient'])->middleware('isLogin');
 Route::post('save-client',[ClientController::class,'saveClient'])->middleware('isLogin');
 Route::get('edit-client/{id}',[ClientController::class,'editClient'])->middleware('isLogin');
+
+Route::get('edit-clientpass/{id}',[ClientController::class,'editClientPass'])->middleware('isLogin');
+Route::post('check-passclient',[ClientController::class,'checkPass'])->middleware('isLogin');
 Route::post('update-client',[ClientController::class,'updateClient'])->middleware('isLogin');
 Route::get('delete-client/{id}',[ClientController::class,'deleteClient'])->middleware('isLogin');
 Route::post('client-advancesearch',[ClientController::class,'advanceSearch'])->middleware('isLogin');

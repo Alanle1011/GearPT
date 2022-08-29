@@ -15,54 +15,30 @@
 <body class="img js-fullheight" style="background-image: url(../img/Background/bg.jpg);">
     <div class="container mt-3" >
         <h2>Client Editing</h2>
-        @if(Session::has('success'))
+        @if(Session::has('fail'))
         <div class="alert alert-success" role="alert">
-            {{Session::get('success')}}
-        </div>
-        @elseif (Session::has('fail'))
-        <div class="alert alert-danger" role="alert">
             {{Session::get('fail')}}
         </div>
         @endif
-        <form action="{{url('update-client')}}" method="post" style="margin: 50px">
+        <form action="{{url('check-passclient')}}" method="post" style="margin: 50px">
             @csrf
             <div class="mb-3">
                 <label for="clientID" >ID</label>
                 <input type="text" class="form-control" id="clientID" name="clientID" value="{{$data->clientID}}" readonly >
             </div>
 
-            <div class="mb-3">
-                <label for="clientName" >Name</label>
-                <input type="text" class="form-control" id="clientName" value="{{$data->clientName}}" name="clientName" required>
-            @error('clientName')
-            <div class="alert alert-danger" role="alert">
-                {{$message}}
-            </div>
-            @enderror
-            </div>
-        
-            <div class="mb-3">
-            <label for="clientPhone" >Phone</label>
-            <input type="number" class="form-control" id="clientPhone" value="{{$data->clientPhone}}" name="clientPhone"  require>
-            </div>
-
             <div class="mb-3" >
-                <label for="clientAddress" >Address</label>
-                <input type="text" class="form-control" id="clientAddress" value="{{$data->clientAddress}}" name="clientAddress" >
-            </div>
-            <div class="mb-3" >
-                <label for="clientUsername" >Username</label>
-                <input type="text" class="form-control" id="clientUsername" placeholder="Enter client username" name="clientUsername" value="{{$data->clientUsername}}" required>
-                @error('clientUsername')
+                <label for="clientPassword" >Old Password</label>
+                <input type="password" class="form-control" placeholder="Enter client password" name="clientOldPassword" id="clientOldPassword"  required>
+                @error('clientPassword')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
                     </div>
                  @enderror
             </div>
-
             <div class="mb-3" >
                 <label for="clientPassword" >Password</label>
-                <input type="password" class="form-control" id="clientPassword" placeholder="Enter client password" name="clientPassword" value="{{$data->clientPassword}}" required readonly>
+                <input type="password" class="form-control"placeholder="Enter client password" name="clientnewPassword" id="clientnewPassword"  required>
                 @error('clientPassword')
                     <div class="alert alert-danger" role="alert">
                         {{$message}}
@@ -70,19 +46,12 @@
                  @enderror
             </div>
 
-            <div class="mb-3" >
-                <label for="clientImage" >Image</label>
-                <input type="file" class="form-control" id="clientImage" placeholder="Enter client image" name="clientImage" value="{{$data->clientImage}}" required>
-                @error('clientImage')
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                    </div>
-                 @enderror
-            </div>
+           
 
             <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to EDIT this client')">Edit</button>
             <a href="{{url('list-client')}}" class="btn btn-danger">Back</a>
-            <a class="btn btn-secondary" style="text-align:right" href="{{url('edit-clientpass/'.$data->clientID)}}">Change Password</a>
+
+            
         </form>
         
            
