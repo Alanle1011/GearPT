@@ -63,17 +63,18 @@ class HomeProductController extends Controller
     }
     public function homeAdvanceSearch(Request $request)
     {
+        
         $productTypedata = ProductType::get();
         $producerdata =Producer::get();
         $data = DB::table('products')
         ->join('product_types','product_types.productTypeID','products.productTypeID')
         ->join('producers','producers.producerID','products.producerID')
         ->select('products.*','product_types.productTypeName','producers.producerName')
-        ->paginate(8);;
+        ->paginate(8);
         
         
         if(!empty($request->productPrice)){
-            $data = Product::where('productPrice', 'LIKE', "%" . $request->productPrice . "%")->paginate(8);
+            $data = Product::where('productPrice', 'LIKE', "%" . $request->productPrice . "%")->get();
         }
         if(!empty($request->productProducer)){
             $data = Product::where('producerID', 'LIKE', "%" . $request->productProducer . "%")->paginate(8);  
@@ -82,7 +83,8 @@ class HomeProductController extends Controller
             $data = Product::where('productTypeID', 'LIKE', "%" . $request->productType . "%")->paginate(8);  
         }
 
-        $data->appends($request->all());
+        
+
         return view('GearPT/product-search', ['products'=>$data],compact('productTypedata','producerdata'));
     }
 }
