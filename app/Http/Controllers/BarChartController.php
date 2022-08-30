@@ -15,7 +15,7 @@ class BarChartController extends Controller
         foreach($result as $val){
             $data.="['".$val->producerName."', ".$val->productCount."],";
         }
-        $barchartData = $data;
-        return view('Admin/barchart', compact('barchartData'));
+        $chartData = $data;
+        return view('Admin/barchart', compact('chartData'));
     }
 }

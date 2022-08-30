@@ -142,42 +142,45 @@
         <div class="main-menu-content">
             <br><br>
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class="active-toggle"><a href="{{ url('admin-dashboard') }}"><i class="ft-home"></i><span
+                <li class="active-toggle"><a href="{{ url('admin-dashboard') }}"><i class="la la-home"></i><span
                             class="menu-title" data-i18n="">Dashboard</span></a>
                 </li>
-                <li class="active-toggle"><a href="{{ url('piechart') }}"><i class="ft-pie-chart"></i><span
+                <li class="active-toggle"><a href="{{ url('barchart') }}"><i class="la la-bar-chart"></i><span
+                            class="menu-title" data-i18n="">Bar Chart</span></a>
+                </li>
+                <li class="active-toggle"><a href="{{ url('piechart') }}"><i class="la la-pie-chart"></i><span
                             class="menu-title" data-i18n="">Pie Chart</span></a>
                 </li>
                 <li class="active-toggle" class="nav-item has-sub dropdown"><a href="#"><i
                             class="la la-list"></i><span class="menu-title" data-i18n="">Table List</span></a>
                     <ul class="menu-content">
-                        <li class=" nav-item"><a href="{{ url('list-admin') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-admin') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Admin</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-staff') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-staff') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Staff</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-client') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-client') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Client</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-product') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-product') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Product</span></a>
                         </li>
                         <li class=" nav-item"><a href="{{ url('list-producttype') }}"><i
-                                    class="la la-table"></i><span class="menu-title" data-i18n=""> Product
+                                    class="ft-table"></i><span class="menu-title" data-i18n=""> Product
                                     type</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-producer') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-producer') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Producer</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-order') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-order') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Order</span></a>
                         </li>
                         <li class=" nav-item"><a href="{{ url('list-orderdetail') }}"><i
-                                    class="la la-table"></i><span class="menu-title" data-i18n=""> Order
+                                    class="ft-table"></i><span class="menu-title" data-i18n=""> Order
                                     Detail</span></a>
                         </li>
-                        <li class=" nav-item"><a href="{{ url('list-feedback') }}"><i class="la la-table"></i><span
+                        <li class=" nav-item"><a href="{{ url('list-feedback') }}"><i class="ft-table"></i><span
                                     class="menu-title" data-i18n=""> Feedback</span></a>
                         </li>
                     </ul>

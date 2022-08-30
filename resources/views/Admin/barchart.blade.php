@@ -36,24 +36,32 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawStuff);
 
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
           ['Producer', 'Number of product'],
-          <?php echo $barchartData; ?>
+          <?php echo $chartData; ?>
         ]);
 
         var options = {
-          title: 'Producers'
+          width: 800,
+          legend: { position: 'top-right' },
+          chart: {  
+            title: 'Chart of Producers',
+            subtitle: 'Popularity by number' },
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Bar Chart'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "30%" }
         };
 
-        var chart = new google.visualization.barChart(document.getElementById('barchart'));
-
-        chart.draw(data, options);
+        var chart = new google.charts.Bar(document.getElementById('barchart'));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
       };
-
     </script>
     
 
@@ -62,7 +70,9 @@
 <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click"
     data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
 
-    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+    
+    
+
 
     <!-- fixed-top-->
     <nav
@@ -217,8 +227,8 @@
     </div>
 
     <div class="app-content content">
-        <div class="content-wrapper">
-            <div class="content-wrapper" id="piechart" style="width: 900p; height: 500px;"></div>
+        <div class="content-wrapper" >
+            <div  id="barchart" style="width: 1000px; height: 500px;"></div>
         </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
